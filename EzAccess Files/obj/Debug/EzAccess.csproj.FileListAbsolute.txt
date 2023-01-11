@@ -1,0 +1,48 @@
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\bin\Debug\GUI.exe.config
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\bin\Debug\GUI.exe
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\bin\Debug\GUI.pdb
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\EzAccess.csproj.AssemblyReference.cache
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\EzAccess.csproj.SuggestedBindingRedirects.cache
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.AdminForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.LogInForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.MenuDefaultForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.RegistrationForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.UserForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\EzAccess.csproj.GenerateResource.cache
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\EzAccess.csproj.CoreCompileInputs.cache
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\EzAccess.csproj.CopyComplete
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.exe
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.pdb
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\bin\Debug\GUI.exe.config
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\bin\Debug\GUI.exe
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\bin\Debug\GUI.pdb
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\obj\Debug\EzAccess.csproj.AssemblyReference.cache
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\obj\Debug\EzAccess.csproj.SuggestedBindingRedirects.cache
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\obj\Debug\GUI.AdminForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\obj\Debug\GUI.LogInForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\obj\Debug\GUI.MenuDefaultForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\obj\Debug\GUI.RegistrationForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\obj\Debug\GUI.UserForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\obj\Debug\EzAccess.csproj.GenerateResource.cache
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\obj\Debug\EzAccess.csproj.CoreCompileInputs.cache
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\obj\Debug\EzAccess.csproj.CopyComplete
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\obj\Debug\GUI.exe
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\GUI\obj\Debug\GUI.pdb
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\bin\Debug\GUI.exe.config
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\bin\Debug\GUI.exe
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\bin\Debug\GUI.pdb
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\EzAccess.csproj.AssemblyReference.cache
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\EzAccess.csproj.SuggestedBindingRedirects.cache
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\GUI.AdminForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\GUI.LogInForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\GUI.MenuDefaultForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\GUI.RegistrationForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\GUI.UserForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\EzAccess.csproj.GenerateResource.cache
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\EzAccess.csproj.CoreCompileInputs.cache
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\EzAccess.csproj.CopyComplete
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\GUI.exe
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\GUI.pdb

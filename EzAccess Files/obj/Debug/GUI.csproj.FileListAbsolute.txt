@@ -1,0 +1,60 @@
+E:\2 COECSA\SY 2022-2023\1 FIRST SEM\SDLE01E Engr. Doctor\0 4some\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+E:\2 COECSA\SY 2022-2023\1 FIRST SEM\SDLE01E Engr. Doctor\0 4some\GUI\obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache
+E:\2 COECSA\SY 2022-2023\1 FIRST SEM\SDLE01E Engr. Doctor\0 4some\GUI\obj\Debug\GUI.Properties.Resources.resources
+E:\2 COECSA\SY 2022-2023\1 FIRST SEM\SDLE01E Engr. Doctor\0 4some\GUI\obj\Debug\GUI.RegisterForm.resources
+E:\2 COECSA\SY 2022-2023\1 FIRST SEM\SDLE01E Engr. Doctor\0 4some\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+E:\2 COECSA\SY 2022-2023\1 FIRST SEM\SDLE01E Engr. Doctor\0 4some\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+E:\2 COECSA\SY 2022-2023\1 FIRST SEM\SDLE01E Engr. Doctor\0 4some\GUI\bin\Debug\GUI.exe.config
+E:\2 COECSA\SY 2022-2023\1 FIRST SEM\SDLE01E Engr. Doctor\0 4some\GUI\bin\Debug\GUI.exe
+E:\2 COECSA\SY 2022-2023\1 FIRST SEM\SDLE01E Engr. Doctor\0 4some\GUI\bin\Debug\GUI.pdb
+E:\2 COECSA\SY 2022-2023\1 FIRST SEM\SDLE01E Engr. Doctor\0 4some\GUI\obj\Debug\GUI.exe
+E:\2 COECSA\SY 2022-2023\1 FIRST SEM\SDLE01E Engr. Doctor\0 4some\GUI\obj\Debug\GUI.pdb
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\bin\Debug\GUI.exe.config
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\bin\Debug\GUI.exe
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\bin\Debug\GUI.pdb
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.AdminForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.IDpreviewForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.LogIn.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.MenuDefaultForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.RegisterForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.exe
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.pdb
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\bin\Debug\USB-Barcode-Scanner.dll
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.AdminForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.LogInForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.MenuDefaultForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.RegistrationForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.UserForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.exe
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.pdb
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\bin\Debug\GUI.exe.config
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\bin\Debug\GUI.exe
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\bin\Debug\GUI.pdb
+C:\Users\Emil Calilung\Documents\GitHub\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.csproj.CopyComplete
+C:\source\repos\SDLE01E_Project\GUI\GUI\bin\Debug\GUI.exe.config
+C:\source\repos\SDLE01E_Project\GUI\GUI\bin\Debug\GUI.exe
+C:\source\repos\SDLE01E_Project\GUI\GUI\bin\Debug\GUI.pdb
+C:\source\repos\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\source\repos\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.csproj.SuggestedBindingRedirects.cache
+C:\source\repos\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.AdminForm.resources
+C:\source\repos\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.LogInForm.resources
+C:\source\repos\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.MenuDefaultForm.resources
+C:\source\repos\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\source\repos\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.RegistrationForm.resources
+C:\source\repos\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.UserForm.resources
+C:\source\repos\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\source\repos\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\source\repos\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.csproj.CopyComplete
+C:\source\repos\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.exe
+C:\source\repos\SDLE01E_Project\GUI\GUI\obj\Debug\GUI.pdb

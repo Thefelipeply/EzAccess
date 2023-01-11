@@ -27,10 +27,11 @@ namespace GUI
             EmptyFieldError_Label.Visible = false;
             TermsUseError_Label.Visible = false;
             UserExistError_Label.Visible = false;
-            //dataGridView1.Visible = false;
-            //dataGridView2.Visible = false;
-            //dataGridView3.Visible = false;
-            //dataGridView4.Visible = false;
+            WrongPass_Label.Visible = false;
+            dataGridView1.Visible = false;
+            dataGridView2.Visible = false;
+            dataGridView3.Visible = false;
+            dataGridView4.Visible = false;
             try
             { 
                 
@@ -62,7 +63,7 @@ namespace GUI
                     var random = new Random();
                     return new string(Enumerable.Repeat(alphabet, length).Select(s => s[random.Next(s.Length)]).ToArray());
                 }
-                GeneratedID = GenerateIDtemp(8);
+                GeneratedID = GenerateIDtemp(16);
                 
 
                 
@@ -98,59 +99,64 @@ namespace GUI
             {
                 if (Agree_CheckBox.Checked)
                 {
-                    //check if username exist in database, return false if did not exist
-                    connect.sql = "SELECT * FROM LoginTable WHERE CONVERT(VARCHAR, Username) = '" + Username_Textbox.Text + "'";
-                    connect.cmd();
-                    connect.sqladapterSelect();
-                    connect.sqlDataSetSelect_LoginTable();
-                    dataGridView4.DataSource = connect.sql_dataset.Tables[0];
-
-                    if (dataGridView4.Rows.Count != 0)
+                    if (Password_Textbox.Text != ConfirmPassword_Textbox.Text)
                     {
-                        try
-                        {
-                            
-                            string defaultpath = "C:\\Users\\Emil Calilung\\Documents\\GitHub\\EzAccess\\EzAccess Files\\Resources\\default 1x1.png";
-                            connect.sql = "INSERT INTO UserTable (ID, FirstName, MiddleName, LastName, Suffix, Age, Sex, Address, Email, Occupation, Status, PicturePath)"
-                            + "VALUES ('" + GeneratedID + "', '" + FirstName_Textbox.Text + "', '" + MiddleName_Textbox.Text + "', '" + LastName_Textbox.Text + "', '" + Suffix_Textbox.Text
-                            + "', '" + "NA" + "', '" + "NA" + "', '" + "NA" + "', '" + Email_Textbox.Text + "', '" + Occupation_Textbox.Text + "', '" + "Inactive" + "', '" + defaultpath + "')";
-                            connect.cmd();
-                            connect.sqladapterInsert();
-
-                            connect.sql = "INSERT INTO LoginTable (ID, Username, Password, AccountType) VALUES ('" + GeneratedID + "', '" + Username_Textbox.Text + "', '" + Password_Textbox.Text + "', 'User" + "')";
-                            connect.cmd();
-                            connect.sqladapterInsert();
-
-                            connect.UserSelect();
-                            connect.cmd();
-                            connect.sqladapterSelect();
-                            connect.sqlDataSetSelect_UserTable();
-                            dataGridView1.DataSource = connect.sql_dataset.Tables[0];
-
-                            connect.LoginSelect();
-                            connect.cmd();
-                            connect.sqladapterSelect();
-                            connect.sqlDataSetSelect_LoginTable();
-                            dataGridView2.DataSource = connect.sql_dataset.Tables[0];
-                            
-                        }
-                        catch (Exception)
-                        {
-                            MessageBox.Show("REGIS");
-                        }
+                        WrongPass_Label.Visible = true;
                     }
                     else
                     {
-                        UserExistError_Label.Visible = true;
-                    }          
-                    
+                        connect.sql = "SELECT * FROM LoginTable WHERE CONVERT(VARCHAR, Username) = '" + Username_Textbox.Text + "'";
+                        connect.cmd();
+                        connect.sqladapterSelect();
+                        connect.sqlDataSetSelect_LoginTable();
+                        dataGridView4.DataSource = connect.sql_dataset.Tables[0];
+
+                        if (dataGridView4.Rows.Count != 0)
+                        {
+                            try
+                            {
+                                string defaultpath = "C:\\Users\\Emil Calilung\\Documents\\GitHub\\EzAccess\\EzAccess Files\\Resources\\default 1x1.png";
+                                connect.sql = "INSERT INTO UserTable (ID, FirstName, MiddleName, LastName, Suffix, Age, Sex, Address, Email, Occupation, Status, PicturePath)"
+                                + "VALUES ('" + GeneratedID + "', '" + FirstName_Textbox.Text + "', '" + MiddleName_Textbox.Text + "', '" + LastName_Textbox.Text + "', '" + Suffix_Textbox.Text
+                                + "', '" + "NA" + "', '" + "NA" + "', '" + "NA" + "', '" + Email_Textbox.Text + "', '" + Occupation_Textbox.Text + "', '" + "Inactive" + "', '" + defaultpath + "')";
+                                connect.cmd();
+                                connect.sqladapterInsert();
+
+                                connect.sql = "INSERT INTO LoginTable (ID, Username, Password, AccountType) VALUES ('" + GeneratedID + "', '" + Username_Textbox.Text + "', '" + Password_Textbox.Text + "', '" + AccountType.Text + "')";
+                                connect.cmd();
+                                connect.sqladapterInsert();
+
+                                connect.UserSelect();
+                                connect.cmd();
+                                connect.sqladapterSelect();
+                                connect.sqlDataSetSelect_UserTable();
+                                dataGridView1.DataSource = connect.sql_dataset.Tables[0];
+
+                                connect.LoginSelect();
+                                connect.cmd();
+                                connect.sqladapterSelect();
+                                connect.sqlDataSetSelect_LoginTable();
+                                dataGridView2.DataSource = connect.sql_dataset.Tables[0];
+
+                                // Display "ACCOUNT IS SUCCESSFULLY CREATED!"
+
+                            }
+                            catch (Exception)
+                            {
+                                MessageBox.Show("REGISTRATION QUERY ERROR!");
+                            }
+                        }
+                        else
+                        {
+                            UserExistError_Label.Visible = true;
+                        }
+                    }                   
                 }
                 else
                 {
                     TermsUseError_Label.Visible = true;
                 }
-            }
-         
+            }      
         }
     }
 }

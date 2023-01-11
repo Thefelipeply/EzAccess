@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -232,30 +233,18 @@ namespace GUI
                 connect.sqladapterSelect();
                 connect.sqlDataSetSelect_UserTable();
 
-                UserID_TextBox.Text =
-                    connect.sql_dataset.Tables[0].Rows[0][0].ToString();
-                GivenName_TextBox.Text =
-                    connect.sql_dataset.Tables[0].Rows[0][1].ToString();
-                MiddleName_TextBox.Text =
-                    connect.sql_dataset.Tables[0].Rows[0][2].ToString();
-                Surname_TextBox.Text =
-                    connect.sql_dataset.Tables[0].Rows[0][3].ToString();
-                Suffix_Textbox.Text =
-                    connect.sql_dataset.Tables[0].Rows[0][4].ToString();
-                Age_TextBox.Text =
-                    connect.sql_dataset.Tables[0].Rows[0][5].ToString();
-                Sex_ComboBox.Text =
-                    connect.sql_dataset.Tables[0].Rows[0][6].ToString();
-                Address_TextBox.Text =
-                    connect.sql_dataset.Tables[0].Rows[0][7].ToString();
-                Email_TextBox.Text =
-                    connect.sql_dataset.Tables[0].Rows[0][8].ToString();
-                Occupation_ComboBox.Text =
-                    connect.sql_dataset.Tables[0].Rows[0][9].ToString();
-                Status_ComboBox.Text =
-                    connect.sql_dataset.Tables[0].Rows[0][10].ToString();
-                PicPath_TextBox.Text =
-                    connect.sql_dataset.Tables[0].Rows[0][11].ToString();
+                UserID_TextBox.Text = connect.sql_dataset.Tables[0].Rows[0][0].ToString();
+                GivenName_TextBox.Text = connect.sql_dataset.Tables[0].Rows[0][1].ToString();
+                MiddleName_TextBox.Text = connect.sql_dataset.Tables[0].Rows[0][2].ToString();
+                Surname_TextBox.Text = connect.sql_dataset.Tables[0].Rows[0][3].ToString();
+                Suffix_Textbox.Text = connect.sql_dataset.Tables[0].Rows[0][4].ToString();
+                Age_TextBox.Text = connect.sql_dataset.Tables[0].Rows[0][5].ToString();
+                Sex_ComboBox.Text = connect.sql_dataset.Tables[0].Rows[0][6].ToString();
+                Address_TextBox.Text = connect.sql_dataset.Tables[0].Rows[0][7].ToString();
+                Email_TextBox.Text = connect.sql_dataset.Tables[0].Rows[0][8].ToString();
+                Occupation_ComboBox.Text = connect.sql_dataset.Tables[0].Rows[0][9].ToString();
+                Status_ComboBox.Text = connect.sql_dataset.Tables[0].Rows[0][10].ToString();
+                PicPath_TextBox.Text = connect.sql_dataset.Tables[0].Rows[0][11].ToString();
                 if (PicPath_TextBox.Text == "")
                 {
                     PictureBox.Image = DefaultPic;
@@ -285,36 +274,66 @@ namespace GUI
         //PRINT ID Panel
         private void PrintSearch_Button_Click(object sender, EventArgs e)
         {
-            connect.sql = "SELECT * FROM UserTable WHERE UserTable.ID = '" + UserID_TextBox.Text + "'";
+            connect.sql = "SELECT * FROM UserTable WHERE UserTable.ID = '" + UserIDPrev_TextBox.Text + "'";
             connect.cmd();
             connect.sqladapterSelect();
             connect.sqlDataSetSelect_UserTable();
 
-            ID_Number.Text =
-                connect.sql_dataset.Tables[0].Rows[0][0].ToString();
+            ID_Number.Text = connect.sql_dataset.Tables[0].Rows[0][0].ToString();
 
             ID_FullName.Text =
                connect.sql_dataset.Tables[0].Rows[0][1].ToString() + " " +
                connect.sql_dataset.Tables[0].Rows[0][2].ToString() + " " +
-               connect.sql_dataset.Tables[0].Rows[0][3].ToString() +
+               connect.sql_dataset.Tables[0].Rows[0][3].ToString() + " " +
                connect.sql_dataset.Tables[0].Rows[0][4].ToString();
 
-            ID_Age.Text =
-                connect.sql_dataset.Tables[0].Rows[0][5].ToString();
-            ID_Sex.Text =
-                connect.sql_dataset.Tables[0].Rows[0][6].ToString();
-            ID_Address.Text =
-                connect.sql_dataset.Tables[0].Rows[0][7].ToString();
-            ID_Occupation.Text =
-                connect.sql_dataset.Tables[0].Rows[0][9].ToString();
+            ID_Age.Text = connect.sql_dataset.Tables[0].Rows[0][5].ToString();
+            ID_Sex.Text = connect.sql_dataset.Tables[0].Rows[0][6].ToString();
+            ID_Address.Text = connect.sql_dataset.Tables[0].Rows[0][7].ToString();
+            ID_Occupation.Text = connect.sql_dataset.Tables[0].Rows[0][9].ToString();
 
-            
+            //bar code
+            Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
+            BarCode_PicBox.Image = barcode.Draw(ID_Number.Text, 50);
+
         }
+        //Bitmap bitmap;
+        PrintPreviewDialog prntprvw = new PrintPreviewDialog();
+        PrintDocument pntdoc = new PrintDocument();
         private void PRINT_Button_Click(object sender, EventArgs e)
         {
+            // save pic command
+            /*
+            using (var bmp = new Bitmap(IdPanel.Width, IdPanel.Height))
+            {
+                IdPanel.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
+                bmp.Save(@"IDS/" + ID_Number.Text + ".bmp");
+            }
+            */
+
+            Print(this.IdPanel);
 
         }
-
+        public void Print(Panel pn1)
+        {
+            PrinterSettings ps = new PrinterSettings();
+            IdPanel = pn1;
+            getptrinarea(pn1);
+            prntprvw.Document = pntdoc;
+            pntdoc.PrintPage += new PrintPageEventHandler(pntdoc_printpage);
+            prntprvw.ShowDialog();
+        }
+        public void pntdoc_printpage(object sender, PrintPageEventArgs e)
+        {
+            Rectangle pagearea = e.PageBounds;
+            e.Graphics.DrawImage(memorying, (8 / 8) - (8 / 8), 8);
+        }
+        Bitmap memorying;
+        public void getptrinarea(Panel pn1)
+        {
+            memorying = new Bitmap(120*4, 70*4);
+            pn1.DrawToBitmap(memorying, new Rectangle(0, 0, pn1.Width, pn1.Height));
+        }
         //LOGS Panel
         private void Cleaner_Button_Click(object sender, EventArgs e)
         {
@@ -338,5 +357,7 @@ namespace GUI
                 Keyword_TextBox.Text = "Keyword";
             }
         }
+
+       
     }
 }

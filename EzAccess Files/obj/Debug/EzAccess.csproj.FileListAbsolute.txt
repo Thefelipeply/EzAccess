@@ -46,3 +46,4 @@ C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\EzAcce
 C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\EzAccess.csproj.CopyComplete
 C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\GUI.exe
 C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\GUI.pdb
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\bin\Debug\Zen.Barcode.Core.dll

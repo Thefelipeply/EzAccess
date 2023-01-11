@@ -4330,7 +4330,7 @@
         iIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiOyQ//E//i9upNrMrVUe1gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="panel5.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="IdPanel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAaEAAAD7CAYAAADDyivnAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAA/7JJREFUeF6c/YeTZcmSJvb1zKwEFtgFQPIPJ42k0Wg0I9SqmZ15ol+r0iK1zpta
@@ -19862,7 +19862,7 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BarCode_PicBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEBLAEsAAD/4RZgRXhpZgAATU0AKgAAAAgACQESAAMAAAABAAEAAAEaAAUAAAAB
         AAAAegEbAAUAAAABAAAAggEoAAMAAAABAAIAAAExAAIAAAAmAAAAigEyAAIAAAAUAAAAsAITAAMAAAAB

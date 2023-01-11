@@ -41,16 +41,16 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.PrintID_Panel = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.IdPanel = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.ID_Sex = new System.Windows.Forms.Label();
             this.ID_Address = new System.Windows.Forms.Label();
             this.ID_Age = new System.Windows.Forms.Label();
-            this.ID_Number = new System.Windows.Forms.Label();
             this.ID_Occupation = new System.Windows.Forms.Label();
             this.ID_FullName = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.BarCode_PicBox = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.ID_Number = new System.Windows.Forms.Label();
             this.UserIDPrev_TextBox = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.PrintSearch_Button = new System.Windows.Forms.Button();
@@ -104,9 +104,9 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PrintID_Panel.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.IdPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BarCode_PicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Logs_Panel.SuspendLayout();
@@ -230,7 +230,7 @@
             // PrintID_Panel
             // 
             this.PrintID_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(120)))), ((int)(((byte)(116)))));
-            this.PrintID_Panel.Controls.Add(this.panel5);
+            this.PrintID_Panel.Controls.Add(this.IdPanel);
             this.PrintID_Panel.Controls.Add(this.UserIDPrev_TextBox);
             this.PrintID_Panel.Controls.Add(this.label16);
             this.PrintID_Panel.Controls.Add(this.PrintSearch_Button);
@@ -241,23 +241,23 @@
             this.PrintID_Panel.Size = new System.Drawing.Size(1102, 684);
             this.PrintID_Panel.TabIndex = 1;
             // 
-            // panel5
+            // IdPanel
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
-            this.panel5.Controls.Add(this.pictureBox5);
-            this.panel5.Controls.Add(this.ID_Sex);
-            this.panel5.Controls.Add(this.ID_Address);
-            this.panel5.Controls.Add(this.ID_Age);
-            this.panel5.Controls.Add(this.ID_Number);
-            this.panel5.Controls.Add(this.ID_Occupation);
-            this.panel5.Controls.Add(this.ID_FullName);
-            this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Controls.Add(this.pictureBox3);
-            this.panel5.Location = new System.Drawing.Point(59, 87);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(985, 515);
-            this.panel5.TabIndex = 7;
+            this.IdPanel.BackColor = System.Drawing.Color.White;
+            this.IdPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("IdPanel.BackgroundImage")));
+            this.IdPanel.Controls.Add(this.pictureBox5);
+            this.IdPanel.Controls.Add(this.ID_Sex);
+            this.IdPanel.Controls.Add(this.ID_Address);
+            this.IdPanel.Controls.Add(this.ID_Age);
+            this.IdPanel.Controls.Add(this.ID_Occupation);
+            this.IdPanel.Controls.Add(this.ID_FullName);
+            this.IdPanel.Controls.Add(this.BarCode_PicBox);
+            this.IdPanel.Controls.Add(this.pictureBox3);
+            this.IdPanel.Controls.Add(this.ID_Number);
+            this.IdPanel.Location = new System.Drawing.Point(59, 87);
+            this.IdPanel.Name = "IdPanel";
+            this.IdPanel.Size = new System.Drawing.Size(985, 515);
+            this.IdPanel.TabIndex = 7;
             // 
             // pictureBox5
             // 
@@ -303,17 +303,6 @@
             this.ID_Age.TabIndex = 1;
             this.ID_Age.Text = "Age";
             // 
-            // ID_Number
-            // 
-            this.ID_Number.AutoSize = true;
-            this.ID_Number.BackColor = System.Drawing.Color.Transparent;
-            this.ID_Number.Font = new System.Drawing.Font("Microsoft Tai Le", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID_Number.Location = new System.Drawing.Point(396, 307);
-            this.ID_Number.Name = "ID_Number";
-            this.ID_Number.Size = new System.Drawing.Size(208, 45);
-            this.ID_Number.TabIndex = 1;
-            this.ID_Number.Text = "IDNUMBER";
-            // 
             // ID_Occupation
             // 
             this.ID_Occupation.AutoSize = true;
@@ -336,15 +325,15 @@
             this.ID_FullName.TabIndex = 1;
             this.ID_FullName.Text = "Name M. Surname Suf";
             // 
-            // pictureBox4
+            // BarCode_PicBox
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(62, 346);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(866, 136);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.BarCode_PicBox.Image = ((System.Drawing.Image)(resources.GetObject("BarCode_PicBox.Image")));
+            this.BarCode_PicBox.Location = new System.Drawing.Point(58, 327);
+            this.BarCode_PicBox.Name = "BarCode_PicBox";
+            this.BarCode_PicBox.Size = new System.Drawing.Size(866, 136);
+            this.BarCode_PicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.BarCode_PicBox.TabIndex = 0;
+            this.BarCode_PicBox.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -355,6 +344,17 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
+            // 
+            // ID_Number
+            // 
+            this.ID_Number.AutoSize = true;
+            this.ID_Number.BackColor = System.Drawing.Color.Transparent;
+            this.ID_Number.Font = new System.Drawing.Font("Microsoft Tai Le", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID_Number.Location = new System.Drawing.Point(298, 457);
+            this.ID_Number.Name = "ID_Number";
+            this.ID_Number.Size = new System.Drawing.Size(388, 45);
+            this.ID_Number.TabIndex = 1;
+            this.ID_Number.Text = "XXXXXXXXXXXXXXXX";
             // 
             // UserIDPrev_TextBox
             // 
@@ -949,10 +949,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PrintID_Panel.ResumeLayout(false);
             this.PrintID_Panel.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.IdPanel.ResumeLayout(false);
+            this.IdPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BarCode_PicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.Logs_Panel.ResumeLayout(false);
@@ -1021,9 +1021,9 @@
         private System.Windows.Forms.TextBox UserIDPrev_TextBox;
         private System.Windows.Forms.Button PrintSearch_Button;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel IdPanel;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox BarCode_PicBox;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label ID_Sex;
         private System.Windows.Forms.Label ID_Age;

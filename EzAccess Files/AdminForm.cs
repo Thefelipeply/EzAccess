@@ -18,8 +18,12 @@ namespace GUI
         EzAccess connect = new EzAccess();
         private string PicPath;
         private Image DefaultPic;
+        PrintPreviewDialog PreviewDialog = new PrintPreviewDialog();
+        
+
         public AdminForm()
         {
+            
             connect.connString();
             InitializeComponent();
         }
@@ -29,6 +33,7 @@ namespace GUI
             DataGridUpdate();
             UpdatedPanel.Hide();
             PicPath_TextBox.Hide();
+            IDPicPath_TextBox.Hide();
             Disable();
 
             TimeSmall_Label.Visible = false;
@@ -111,6 +116,7 @@ namespace GUI
         }
         private void Clear()
         {
+            // change loc file if using different pc
             DefaultPic = Image.FromFile("C:\\Users\\Emil Calilung\\Documents\\GitHub\\EzAccess\\EzAccess Files\\Resources\\default 1x1.png");
             PictureBox.Image = DefaultPic;
 
@@ -291,15 +297,22 @@ namespace GUI
             ID_Sex.Text = connect.sql_dataset.Tables[0].Rows[0][6].ToString();
             ID_Address.Text = connect.sql_dataset.Tables[0].Rows[0][7].ToString();
             ID_Occupation.Text = connect.sql_dataset.Tables[0].Rows[0][9].ToString();
+            IDPicPath_TextBox.Text = connect.sql_dataset.Tables[0].Rows[0][11].ToString();
 
+            if (IDPicPath_TextBox.Text == "")
+            {
+                IDpicBox.Image = DefaultPic;
+            }
+            else
+            {
+                IDpicBox.Image = Image.FromFile(IDPicPath_TextBox.Text);
+            }
             //bar code
             Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
             BarCode_PicBox.Image = barcode.Draw(ID_Number.Text, 50);
 
         }
-        //Bitmap bitmap;
-        PrintPreviewDialog prntprvw = new PrintPreviewDialog();
-        PrintDocument pntdoc = new PrintDocument();
+        
         private void PRINT_Button_Click(object sender, EventArgs e)
         {
             // save pic command
@@ -311,13 +324,19 @@ namespace GUI
             }
             */
 
-            Print(this.IdPanel);
+            Print(this.ID_Panel);
 
         }
+
+
+        PrintPreviewDialog prntprvw = new PrintPreviewDialog();
+        PrintDocument pntdoc = new PrintDocument();
+        Panel Panel = null;
+        Bitmap memorying;
         public void Print(Panel pn1)
         {
             PrinterSettings ps = new PrinterSettings();
-            IdPanel = pn1;
+            Panel = pn1;
             getptrinarea(pn1);
             prntprvw.Document = pntdoc;
             pntdoc.PrintPage += new PrintPageEventHandler(pntdoc_printpage);
@@ -325,19 +344,29 @@ namespace GUI
         }
         public void pntdoc_printpage(object sender, PrintPageEventArgs e)
         {
+                
             Rectangle pagearea = e.PageBounds;
-            e.Graphics.DrawImage(memorying, (8 / 8) - (8 / 8), 8);
+            e.Graphics.DrawImage(memorying, (pagearea.Width / 4) - (this.ID_Panel.Width / 4), 0);
+            
         }
-        Bitmap memorying;
         public void getptrinarea(Panel pn1)
         {
-            memorying = new Bitmap(120*4, 70*4);
+            memorying = new Bitmap(pn1.Width, pn1.Height);
             pn1.DrawToBitmap(memorying, new Rectangle(0, 0, pn1.Width, pn1.Height));
         }
+        
         //LOGS Panel
         private void Cleaner_Button_Click(object sender, EventArgs e)
         {
-            //icclear ba yung buong logs?
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to clear logs?", "Logs Cleaner", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                connect.sql = "DELETE FROM LogsTable";
+                connect.cmd();
+                connect.sqladapterDelete();
+
+                DataGridUpdate();
+            }
         }
 
         private void KeywordSearch_Button_Click(object sender, EventArgs e)
@@ -357,7 +386,5 @@ namespace GUI
                 Keyword_TextBox.Text = "Keyword";
             }
         }
-
-       
     }
 }

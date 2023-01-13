@@ -182,48 +182,75 @@ namespace GUI
         //USER Panel
         private void ResetPass_Button_Click(object sender, EventArgs e)
         {
-            UserForm userform = new UserForm();
-            userform.Show();
-            this.Hide();
+            //put an confirmation first
+            try
+            {
+                connect.sql = "UPDATE LoginTable SET " +
+                "Password = 'Pass123' " +
+                "WHERE ID = '" + UserID_TextBox.Text + "'";
+                connect.cmd();
+                connect.sqladapterUpdate();
+            }
+            catch (Exception)
+            {
+
+            }
+            
         }
         private void UpdateUser_Button_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to update this user?", "Update", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                connect.sql = "UPDATE UserTable SET " +
-                    "FirstName = '" + GivenName_TextBox.Text + "', " +
-                    "MiddleName = '" + MiddleName_TextBox.Text + "', " +
-                    "LastName = '" + Surname_TextBox.Text + "', " +
-                    "Suffix = '" + Suffix_Textbox.Text + "', " +
-                    "Age = '" + Age_TextBox.Text + "', " +
-                    "Sex = '" + Sex_ComboBox.Text + "', " +
-                    "Address = '" + Address_TextBox.Text + "', " +
-                    "Email = '" + Email_TextBox.Text + "', " +
-                    "Occupation = '" + Occupation_ComboBox.Text + "', " +
-                    "Status = '" + Status_ComboBox.Text + "', " +
-                    "PicturePath = '" + PicPath_TextBox.Text + "' " +
-                    "WHERE ID = '" + UserID_TextBox.Text + "'";
-                connect.cmd();
-                connect.sqladapterUpdate();
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to update this user?", "Update", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    connect.sql = "UPDATE UserTable SET " +
+                        "FirstName = '" + GivenName_TextBox.Text + "', " +
+                        "MiddleName = '" + MiddleName_TextBox.Text + "', " +
+                        "LastName = '" + Surname_TextBox.Text + "', " +
+                        "Suffix = '" + Suffix_Textbox.Text + "', " +
+                        "Age = '" + Age_TextBox.Text + "', " +
+                        "Sex = '" + Sex_ComboBox.Text + "', " +
+                        "Address = '" + Address_TextBox.Text + "', " +
+                        "Email = '" + Email_TextBox.Text + "', " +
+                        "Occupation = '" + Occupation_ComboBox.Text + "', " +
+                        "Status = '" + Status_ComboBox.Text + "', " +
+                        "PicturePath = '" + PicPath_TextBox.Text + "' " +
+                        "WHERE ID = '" + UserID_TextBox.Text + "'";
+                    connect.cmd();
+                    connect.sqladapterUpdate();
 
-                DataGridUpdate();
-                UpdatedPanel.Show();
-                Disable();
+                    DataGridUpdate();
+                    UpdatedPanel.Show();
+                    Disable();
+                }
             }
+            catch (Exception)
+            {
+
+            }
+            
         }
         private void DeleteUser_Button_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this user?", "Delete", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                connect.sql = "DELETE FROM UserTable WHERE UserTable.ID = '" + UserID_TextBox.Text + "'";
-                connect.cmd();
-                connect.sqladapterDelete();
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this user?", "Delete", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    connect.sql = "DELETE FROM UserTable WHERE UserTable.ID = '" + UserID_TextBox.Text + "'";
+                    connect.cmd();
+                    connect.sqladapterDelete();
 
-                Disable();
-                Clear();
+                    Disable();
+                    Clear();
+                }
             }
+            catch (Exception)
+            {
+
+            }
+            
         }
         private void Clear_Button_Click(object sender, EventArgs e)
         {
@@ -281,45 +308,51 @@ namespace GUI
         //PRINT ID Panel
         private void PrintSearch_Button_Click(object sender, EventArgs e)
         {
-            connect.sql = "SELECT * FROM UserTable WHERE UserTable.ID = '" + UserIDPrev_TextBox.Text + "'";
-            connect.cmd();
-            connect.sqladapterSelect();
-            connect.sqlDataSetSelect_UserTable();
-
-            ID_Number.Text = connect.sql_dataset.Tables[0].Rows[0][0].ToString();
-
-            ID_FullName.Text =
-               connect.sql_dataset.Tables[0].Rows[0][1].ToString() + " " +
-               connect.sql_dataset.Tables[0].Rows[0][2].ToString() + " " +
-               connect.sql_dataset.Tables[0].Rows[0][3].ToString() + " " +
-               connect.sql_dataset.Tables[0].Rows[0][4].ToString();
-
-            ID_Age.Text = connect.sql_dataset.Tables[0].Rows[0][5].ToString();
-            ID_Sex.Text = connect.sql_dataset.Tables[0].Rows[0][6].ToString();
-            ID_Address.Text = connect.sql_dataset.Tables[0].Rows[0][7].ToString();
-            ID_Occupation.Text = connect.sql_dataset.Tables[0].Rows[0][9].ToString();
-            IDPicPath_TextBox.Text = connect.sql_dataset.Tables[0].Rows[0][11].ToString();
-
-            if (IDPicPath_TextBox.Text == "")
+            try
             {
-                IDpicBox.Image = DefaultPic;
+                connect.sql = "SELECT * FROM UserTable WHERE UserTable.ID = '" + UserIDPrev_TextBox.Text + "'";
+                connect.cmd();
+                connect.sqladapterSelect();
+                connect.sqlDataSetSelect_UserTable();
+
+                ID_Number.Text = connect.sql_dataset.Tables[0].Rows[0][0].ToString();
+
+                ID_FullName.Text =
+                   connect.sql_dataset.Tables[0].Rows[0][1].ToString() + " " +
+                   connect.sql_dataset.Tables[0].Rows[0][2].ToString() + " " +
+                   connect.sql_dataset.Tables[0].Rows[0][3].ToString() + " " +
+                   connect.sql_dataset.Tables[0].Rows[0][4].ToString();
+
+                ID_Age.Text = connect.sql_dataset.Tables[0].Rows[0][5].ToString();
+                ID_Sex.Text = connect.sql_dataset.Tables[0].Rows[0][6].ToString();
+                ID_Address.Text = connect.sql_dataset.Tables[0].Rows[0][7].ToString();
+                ID_Occupation.Text = connect.sql_dataset.Tables[0].Rows[0][9].ToString();
+                IDPicPath_TextBox.Text = connect.sql_dataset.Tables[0].Rows[0][11].ToString();
+
+                if (IDPicPath_TextBox.Text == "")
+                {
+                    IDpicBox.Image = DefaultPic;
+                }
+                else
+                {
+                    IDpicBox.Image = Image.FromFile(IDPicPath_TextBox.Text);
+                }
+                //bar code
+                Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
+                Barcode_picBox.Image = barcode.Draw(ID_Number.Text, 50);
+
+                printableName.Text = ID_FullName.Text;
+                printableAge.Text = ID_Age.Text;
+                printableSex.Text = ID_Sex.Text;
+                printableAddress.Text = ID_Address.Text;
+                printableOccupation.Text = ID_Occupation.Text;
+                printablePic.Image = IDpicBox.Image;
+                printableIDNum.Text = ID_Number.Text;
             }
-            else
+            catch (Exception)
             {
-                IDpicBox.Image = Image.FromFile(IDPicPath_TextBox.Text);
+
             }
-            //bar code
-            Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
-            Barcode_picBox.Image = barcode.Draw(ID_Number.Text, 50);
-
-            printableName.Text = ID_FullName.Text;
-            printableAge.Text = ID_Age.Text;
-            printableSex.Text = ID_Sex.Text;
-            printableAddress.Text = ID_Address.Text;
-            printableOccupation.Text = ID_Occupation.Text;
-            printablePic.Image = IDpicBox.Image;
-            printableIDNum.Text = ID_Number.Text;
-
         }
         
         private void PRINT_Button_Click(object sender, EventArgs e)
@@ -345,7 +378,7 @@ namespace GUI
         {
                 
             Rectangle pagearea = e.PageBounds;
-            e.Graphics.DrawImage(memorying, (pagearea.Width / 4) - (this.IDprintable_pnel.Width / 4), this.IDprintable_pnel.Y);
+            e.Graphics.DrawImage(memorying, (this.IDprintable_pnel.Width / 4) - (this.IDprintable_pnel.Height / 4), 20);
             
         }
         public void getptrinarea(Panel pn1)
@@ -357,29 +390,45 @@ namespace GUI
         //LOGS Panel
         private void Cleaner_Button_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to clear logs?", "Logs Cleaner", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                connect.sql = "DELETE FROM LogsTable";
-                connect.cmd();
-                connect.sqladapterDelete();
-
-                DataGridUpdate();
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to clear logs?", "Logs Cleaner", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    connect.sql = "DELETE FROM LogsTable";
+                    connect.cmd();
+                    connect.sqladapterDelete();
+                        
+                    DataGridUpdate();
+                }
             }
+            catch (Exception)
+            {
+
+            }
+            
         }
 
         private void KeywordSearch_Button_Click(object sender, EventArgs e)
         {
-            connect.sql = "SELECT * FROM LogsTable " +
+            try
+            {
+                connect.sql = "SELECT * FROM LogsTable " +
                 "WHERE LogsTable.NumberOfLogs LIKE '%" + Keyword_TextBox.Text + "%' " +
                 "OR LogsTable.Message LIKE '%" + Keyword_TextBox.Text + "%' " +
                 "OR LogsTable.DateAndTime LIKE '%" + Keyword_TextBox.Text + "%' " +
                 "OR LogsTable.ID LIKE '%" + Keyword_TextBox.Text + "%' ";
 
-            connect.cmd();
-            connect.sqladapterSelect();
-            connect.sqlDataSetSelect_LogsTable();
-            dataGridView2.DataSource = connect.sql_dataset.Tables[0];
+                connect.cmd();
+                connect.sqladapterSelect();
+                connect.sqlDataSetSelect_LogsTable();
+                dataGridView2.DataSource = connect.sql_dataset.Tables[0];
+            }
+            catch (Exception)
+            {
+
+            }
+            
         }
 
         private void Keyword_TextBox_Enter(object sender, EventArgs e)

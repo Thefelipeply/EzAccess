@@ -33,7 +33,6 @@ namespace GUI
             string AccountType = "";
 
             try{
-                //connect.sql = "SELECT * FROM LoginTable WHERE Username = '" + username_TxtBox.Text + "', Password = '" + password_Txtbox.Text + "', '";
                 connect.sql = "SELECT * FROM LoginTable WHERE CONVERT(varchar, Username) = '" + username_TxtBox.Text + "' AND " +
                     "CONVERT(varchar, Password) = '" + password_Txtbox.Text + "'";
                 connect.cmd();

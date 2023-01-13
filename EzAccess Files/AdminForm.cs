@@ -34,6 +34,7 @@ namespace GUI
             UpdatedPanel.Hide();
             PicPath_TextBox.Hide();
             IDPicPath_TextBox.Hide();
+            IDprintable_pnel.Hide();
             Disable();
 
             TimeSmall_Label.Visible = false;
@@ -309,23 +310,21 @@ namespace GUI
             }
             //bar code
             Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
-            BarCode_PicBox.Image = barcode.Draw(ID_Number.Text, 50);
+            Barcode_picBox.Image = barcode.Draw(ID_Number.Text, 50);
+
+            printableName.Text = ID_FullName.Text;
+            printableAge.Text = ID_Age.Text;
+            printableSex.Text = ID_Sex.Text;
+            printableAddress.Text = ID_Address.Text;
+            printableOccupation.Text = ID_Occupation.Text;
+            printablePic.Image = IDpicBox.Image;
+            printableIDNum.Text = ID_Number.Text;
 
         }
         
         private void PRINT_Button_Click(object sender, EventArgs e)
         {
-            // save pic command
-            /*
-            using (var bmp = new Bitmap(IdPanel.Width, IdPanel.Height))
-            {
-                IdPanel.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
-                bmp.Save(@"IDS/" + ID_Number.Text + ".bmp");
-            }
-            */
-
-            Print(this.ID_Panel);
-
+            Print(this.IDprintable_pnel);
         }
 
 
@@ -346,7 +345,7 @@ namespace GUI
         {
                 
             Rectangle pagearea = e.PageBounds;
-            e.Graphics.DrawImage(memorying, (pagearea.Width / 4) - (this.ID_Panel.Width / 4), 0);
+            e.Graphics.DrawImage(memorying, (pagearea.Width / 4) - (this.IDprintable_pnel.Width / 4), this.IDprintable_pnel.Y);
             
         }
         public void getptrinarea(Panel pn1)
@@ -371,7 +370,16 @@ namespace GUI
 
         private void KeywordSearch_Button_Click(object sender, EventArgs e)
         {
+            connect.sql = "SELECT * FROM LogsTable " +
+                "WHERE LogsTable.NumberOfLogs LIKE '%" + Keyword_TextBox.Text + "%' " +
+                "OR LogsTable.Message LIKE '%" + Keyword_TextBox.Text + "%' " +
+                "OR LogsTable.DateAndTime LIKE '%" + Keyword_TextBox.Text + "%' " +
+                "OR LogsTable.ID LIKE '%" + Keyword_TextBox.Text + "%' ";
 
+            connect.cmd();
+            connect.sqladapterSelect();
+            connect.sqlDataSetSelect_LogsTable();
+            dataGridView2.DataSource = connect.sql_dataset.Tables[0];
         }
 
         private void Keyword_TextBox_Enter(object sender, EventArgs e)

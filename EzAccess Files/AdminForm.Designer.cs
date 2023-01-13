@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.backBtn = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@
             this.ID_Age = new System.Windows.Forms.Label();
             this.ID_Occupation = new System.Windows.Forms.Label();
             this.ID_FullName = new System.Windows.Forms.Label();
-            this.BarCode_PicBox = new System.Windows.Forms.PictureBox();
+            this.Barcode_picBox = new System.Windows.Forms.PictureBox();
             this.IDpicBox = new System.Windows.Forms.PictureBox();
             this.ID_Number = new System.Windows.Forms.Label();
             this.UserIDPrev_TextBox = new System.Windows.Forms.TextBox();
@@ -102,12 +102,22 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.IDprintable_pnel = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.printableSex = new System.Windows.Forms.Label();
+            this.printableAddress = new System.Windows.Forms.Label();
+            this.printableAge = new System.Windows.Forms.Label();
+            this.printableOccupation = new System.Windows.Forms.Label();
+            this.printableName = new System.Windows.Forms.Label();
+            this.printableBarCode = new System.Windows.Forms.PictureBox();
+            this.printablePic = new System.Windows.Forms.PictureBox();
+            this.printableIDNum = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PrintID_Panel.SuspendLayout();
             this.ID_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BarCode_PicBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Barcode_picBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDpicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Logs_Panel.SuspendLayout();
@@ -116,6 +126,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.UpdatedPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.IDprintable_pnel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printableBarCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printablePic)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -231,6 +245,7 @@
             // PrintID_Panel
             // 
             this.PrintID_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(120)))), ((int)(((byte)(116)))));
+            this.PrintID_Panel.Controls.Add(this.IDprintable_pnel);
             this.PrintID_Panel.Controls.Add(this.ID_Panel);
             this.PrintID_Panel.Controls.Add(this.UserIDPrev_TextBox);
             this.PrintID_Panel.Controls.Add(this.label16);
@@ -253,7 +268,7 @@
             this.ID_Panel.Controls.Add(this.ID_Age);
             this.ID_Panel.Controls.Add(this.ID_Occupation);
             this.ID_Panel.Controls.Add(this.ID_FullName);
-            this.ID_Panel.Controls.Add(this.BarCode_PicBox);
+            this.ID_Panel.Controls.Add(this.Barcode_picBox);
             this.ID_Panel.Controls.Add(this.IDpicBox);
             this.ID_Panel.Controls.Add(this.ID_Number);
             this.ID_Panel.Location = new System.Drawing.Point(59, 87);
@@ -335,15 +350,15 @@
             this.ID_FullName.TabIndex = 1;
             this.ID_FullName.Text = "Name M. Surname Suf";
             // 
-            // BarCode_PicBox
+            // Barcode_picBox
             // 
-            this.BarCode_PicBox.Image = ((System.Drawing.Image)(resources.GetObject("BarCode_PicBox.Image")));
-            this.BarCode_PicBox.Location = new System.Drawing.Point(58, 327);
-            this.BarCode_PicBox.Name = "BarCode_PicBox";
-            this.BarCode_PicBox.Size = new System.Drawing.Size(866, 136);
-            this.BarCode_PicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.BarCode_PicBox.TabIndex = 0;
-            this.BarCode_PicBox.TabStop = false;
+            this.Barcode_picBox.Image = ((System.Drawing.Image)(resources.GetObject("Barcode_picBox.Image")));
+            this.Barcode_picBox.Location = new System.Drawing.Point(58, 327);
+            this.Barcode_picBox.Name = "Barcode_picBox";
+            this.Barcode_picBox.Size = new System.Drawing.Size(866, 136);
+            this.Barcode_picBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Barcode_picBox.TabIndex = 0;
+            this.Barcode_picBox.TabStop = false;
             // 
             // IDpicBox
             // 
@@ -524,14 +539,14 @@
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(146)))), ((int)(((byte)(137)))));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DarkSeaGreen;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DarkOliveGreen;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSeaGreen;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkOliveGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.Location = new System.Drawing.Point(31, 149);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(1036, 460);
@@ -911,14 +926,14 @@
             // 
             this.dataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(146)))), ((int)(((byte)(137)))));
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DarkSeaGreen;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkOliveGreen;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSeaGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkOliveGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView3.Location = new System.Drawing.Point(12, 15);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(346, 654);
@@ -933,6 +948,121 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // IDprintable_pnel
+            // 
+            this.IDprintable_pnel.BackColor = System.Drawing.Color.White;
+            this.IDprintable_pnel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("IDprintable_pnel.BackgroundImage")));
+            this.IDprintable_pnel.Controls.Add(this.printableBarCode);
+            this.IDprintable_pnel.Controls.Add(this.pictureBox3);
+            this.IDprintable_pnel.Controls.Add(this.printableSex);
+            this.IDprintable_pnel.Controls.Add(this.printableAddress);
+            this.IDprintable_pnel.Controls.Add(this.printableAge);
+            this.IDprintable_pnel.Controls.Add(this.printableOccupation);
+            this.IDprintable_pnel.Controls.Add(this.printableName);
+            this.IDprintable_pnel.Controls.Add(this.printablePic);
+            this.IDprintable_pnel.Controls.Add(this.printableIDNum);
+            this.IDprintable_pnel.Location = new System.Drawing.Point(751, 18);
+            this.IDprintable_pnel.Name = "IDprintable_pnel";
+            this.IDprintable_pnel.Size = new System.Drawing.Size(324, 195);
+            this.IDprintable_pnel.TabIndex = 8;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(276, 14);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(37, 32);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 2;
+            this.pictureBox3.TabStop = false;
+            // 
+            // printableSex
+            // 
+            this.printableSex.AutoSize = true;
+            this.printableSex.BackColor = System.Drawing.Color.Transparent;
+            this.printableSex.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printableSex.Location = new System.Drawing.Point(112, 74);
+            this.printableSex.Name = "printableSex";
+            this.printableSex.Size = new System.Drawing.Size(24, 14);
+            this.printableSex.TabIndex = 1;
+            this.printableSex.Text = "Sex";
+            // 
+            // printableAddress
+            // 
+            this.printableAddress.AutoSize = true;
+            this.printableAddress.BackColor = System.Drawing.Color.Transparent;
+            this.printableAddress.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printableAddress.Location = new System.Drawing.Point(112, 43);
+            this.printableAddress.Name = "printableAddress";
+            this.printableAddress.Size = new System.Drawing.Size(48, 14);
+            this.printableAddress.TabIndex = 1;
+            this.printableAddress.Text = "Address";
+            // 
+            // printableAge
+            // 
+            this.printableAge.AutoSize = true;
+            this.printableAge.BackColor = System.Drawing.Color.Transparent;
+            this.printableAge.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printableAge.Location = new System.Drawing.Point(112, 58);
+            this.printableAge.Name = "printableAge";
+            this.printableAge.Size = new System.Drawing.Size(27, 14);
+            this.printableAge.TabIndex = 1;
+            this.printableAge.Text = "Age";
+            // 
+            // printableOccupation
+            // 
+            this.printableOccupation.AutoSize = true;
+            this.printableOccupation.BackColor = System.Drawing.Color.Transparent;
+            this.printableOccupation.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printableOccupation.Location = new System.Drawing.Point(108, 90);
+            this.printableOccupation.Name = "printableOccupation";
+            this.printableOccupation.Size = new System.Drawing.Size(77, 16);
+            this.printableOccupation.TabIndex = 1;
+            this.printableOccupation.Text = "Occupation";
+            // 
+            // printableName
+            // 
+            this.printableName.AutoSize = true;
+            this.printableName.BackColor = System.Drawing.Color.Transparent;
+            this.printableName.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printableName.Location = new System.Drawing.Point(108, 26);
+            this.printableName.Name = "printableName";
+            this.printableName.Size = new System.Drawing.Size(145, 16);
+            this.printableName.TabIndex = 1;
+            this.printableName.Text = "Name M. Surname Suf";
+            // 
+            // printableBarCode
+            // 
+            this.printableBarCode.Image = ((System.Drawing.Image)(resources.GetObject("printableBarCode.Image")));
+            this.printableBarCode.Location = new System.Drawing.Point(31, 118);
+            this.printableBarCode.Name = "printableBarCode";
+            this.printableBarCode.Size = new System.Drawing.Size(263, 53);
+            this.printableBarCode.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.printableBarCode.TabIndex = 0;
+            this.printableBarCode.TabStop = false;
+            // 
+            // printablePic
+            // 
+            this.printablePic.Image = ((System.Drawing.Image)(resources.GetObject("printablePic.Image")));
+            this.printablePic.Location = new System.Drawing.Point(14, 21);
+            this.printablePic.Name = "printablePic";
+            this.printablePic.Size = new System.Drawing.Size(86, 85);
+            this.printablePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.printablePic.TabIndex = 0;
+            this.printablePic.TabStop = false;
+            // 
+            // printableIDNum
+            // 
+            this.printableIDNum.AutoSize = true;
+            this.printableIDNum.BackColor = System.Drawing.Color.Transparent;
+            this.printableIDNum.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.printableIDNum.Location = new System.Drawing.Point(102, 170);
+            this.printableIDNum.Name = "printableIDNum";
+            this.printableIDNum.Size = new System.Drawing.Size(119, 14);
+            this.printableIDNum.TabIndex = 1;
+            this.printableIDNum.Text = "XXXXXXXXXXXXXXXX";
             // 
             // AdminForm
             // 
@@ -962,7 +1092,7 @@
             this.ID_Panel.ResumeLayout(false);
             this.ID_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BarCode_PicBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Barcode_picBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDpicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.Logs_Panel.ResumeLayout(false);
@@ -974,6 +1104,11 @@
             this.UpdatedPanel.ResumeLayout(false);
             this.UpdatedPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.IDprintable_pnel.ResumeLayout(false);
+            this.IDprintable_pnel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printableBarCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printablePic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1033,7 +1168,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Panel ID_Panel;
         private System.Windows.Forms.PictureBox IDpicBox;
-        private System.Windows.Forms.PictureBox BarCode_PicBox;
+        private System.Windows.Forms.PictureBox Barcode_picBox;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label ID_Sex;
         private System.Windows.Forms.Label ID_Age;
@@ -1052,5 +1187,15 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox IDPicPath_TextBox;
         private System.Drawing.Printing.PrintDocument PrintDoc;
+        private System.Windows.Forms.Panel IDprintable_pnel;
+        private System.Windows.Forms.PictureBox printableBarCode;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label printableSex;
+        private System.Windows.Forms.Label printableAddress;
+        private System.Windows.Forms.Label printableAge;
+        private System.Windows.Forms.Label printableOccupation;
+        private System.Windows.Forms.Label printableName;
+        private System.Windows.Forms.PictureBox printablePic;
+        private System.Windows.Forms.Label printableIDNum;
     }
 }

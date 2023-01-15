@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.backBtn = new System.Windows.Forms.Button();
@@ -68,16 +68,18 @@
             this.PRINT_Button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.TimeSmall_Label = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TimeLarge_Label = new System.Windows.Forms.Label();
             this.Logs_Panel = new System.Windows.Forms.Panel();
             this.KeywordSearch_Button = new System.Windows.Forms.Button();
             this.Cleaner_Button = new System.Windows.Forms.Button();
+            this.LogCleared_Label = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Keyword_TextBox = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Users_Panel = new System.Windows.Forms.Panel();
+            this.DeleteUSer_Label = new System.Windows.Forms.Label();
+            this.ResetPass_Label = new System.Windows.Forms.Label();
             this.PicPath_TextBox = new System.Windows.Forms.TextBox();
             this.PictureBox = new System.Windows.Forms.PictureBox();
             this.UpdatedPanel = new System.Windows.Forms.Panel();
@@ -112,6 +114,8 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.FormClose_Button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PrintID_Panel.SuspendLayout();
@@ -123,13 +127,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Barcode_picBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDpicBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Logs_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.Users_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.UpdatedPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -163,7 +167,7 @@
             this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backBtn.ForeColor = System.Drawing.Color.Transparent;
-            this.backBtn.Location = new System.Drawing.Point(35, 672);
+            this.backBtn.Location = new System.Drawing.Point(36, 672);
             this.backBtn.Margin = new System.Windows.Forms.Padding(2);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(163, 46);
@@ -270,7 +274,7 @@
             this.IDprintable_pnel.Controls.Add(this.printableName);
             this.IDprintable_pnel.Controls.Add(this.printablePic);
             this.IDprintable_pnel.Controls.Add(this.printableIDNum);
-            this.IDprintable_pnel.Location = new System.Drawing.Point(751, 18);
+            this.IDprintable_pnel.Location = new System.Drawing.Point(763, 18);
             this.IDprintable_pnel.Name = "IDprintable_pnel";
             this.IDprintable_pnel.Size = new System.Drawing.Size(324, 195);
             this.IDprintable_pnel.TabIndex = 8;
@@ -562,22 +566,12 @@
             this.TimeSmall_Label.TabIndex = 4;
             this.TimeSmall_Label.Text = "TIMELABEL";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(528, 195);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(613, 292);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(678, 504);
+            this.label1.Location = new System.Drawing.Point(667, 504);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(294, 23);
             this.label1.TabIndex = 6;
@@ -588,7 +582,7 @@
             this.TimeLarge_Label.AutoSize = true;
             this.TimeLarge_Label.Font = new System.Drawing.Font("Microsoft Tai Le", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TimeLarge_Label.ForeColor = System.Drawing.Color.White;
-            this.TimeLarge_Label.Location = new System.Drawing.Point(713, 101);
+            this.TimeLarge_Label.Location = new System.Drawing.Point(684, 101);
             this.TimeLarge_Label.Name = "TimeLarge_Label";
             this.TimeLarge_Label.Size = new System.Drawing.Size(283, 61);
             this.TimeLarge_Label.TabIndex = 4;
@@ -599,6 +593,7 @@
             this.Logs_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(120)))), ((int)(((byte)(116)))));
             this.Logs_Panel.Controls.Add(this.KeywordSearch_Button);
             this.Logs_Panel.Controls.Add(this.Cleaner_Button);
+            this.Logs_Panel.Controls.Add(this.LogCleared_Label);
             this.Logs_Panel.Controls.Add(this.label3);
             this.Logs_Panel.Controls.Add(this.Keyword_TextBox);
             this.Logs_Panel.Controls.Add(this.dataGridView2);
@@ -609,24 +604,43 @@
             // 
             // KeywordSearch_Button
             // 
+            this.KeywordSearch_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.KeywordSearch_Button.FlatAppearance.BorderSize = 0;
+            this.KeywordSearch_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.KeywordSearch_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KeywordSearch_Button.ForeColor = System.Drawing.Color.White;
             this.KeywordSearch_Button.Location = new System.Drawing.Point(966, 94);
             this.KeywordSearch_Button.Name = "KeywordSearch_Button";
             this.KeywordSearch_Button.Size = new System.Drawing.Size(100, 28);
             this.KeywordSearch_Button.TabIndex = 4;
             this.KeywordSearch_Button.Text = "Search";
-            this.KeywordSearch_Button.UseVisualStyleBackColor = true;
+            this.KeywordSearch_Button.UseVisualStyleBackColor = false;
             this.KeywordSearch_Button.Click += new System.EventHandler(this.KeywordSearch_Button_Click);
             // 
             // Cleaner_Button
             // 
+            this.Cleaner_Button.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.Cleaner_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cleaner_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cleaner_Button.Location = new System.Drawing.Point(39, 92);
             this.Cleaner_Button.Name = "Cleaner_Button";
             this.Cleaner_Button.Size = new System.Drawing.Size(148, 31);
             this.Cleaner_Button.TabIndex = 3;
             this.Cleaner_Button.Text = "Cleaner";
-            this.Cleaner_Button.UseVisualStyleBackColor = true;
+            this.Cleaner_Button.UseVisualStyleBackColor = false;
             this.Cleaner_Button.Click += new System.EventHandler(this.Cleaner_Button_Click);
+            // 
+            // LogCleared_Label
+            // 
+            this.LogCleared_Label.AutoSize = true;
+            this.LogCleared_Label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(46)))), ((int)(((byte)(49)))));
+            this.LogCleared_Label.Font = new System.Drawing.Font("Microsoft Tai Le", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LogCleared_Label.ForeColor = System.Drawing.Color.White;
+            this.LogCleared_Label.Location = new System.Drawing.Point(332, 620);
+            this.LogCleared_Label.Name = "LogCleared_Label";
+            this.LogCleared_Label.Size = new System.Drawing.Size(474, 45);
+            this.LogCleared_Label.TabIndex = 2;
+            this.LogCleared_Label.Text = "Logs is successfully cleared!";
             // 
             // label3
             // 
@@ -654,14 +668,14 @@
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(146)))), ((int)(((byte)(137)))));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSeaGreen;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkOliveGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkSeaGreen;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DarkOliveGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.Location = new System.Drawing.Point(31, 149);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(1036, 460);
@@ -670,6 +684,8 @@
             // Users_Panel
             // 
             this.Users_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(120)))), ((int)(((byte)(116)))));
+            this.Users_Panel.Controls.Add(this.DeleteUSer_Label);
+            this.Users_Panel.Controls.Add(this.ResetPass_Label);
             this.Users_Panel.Controls.Add(this.PicPath_TextBox);
             this.Users_Panel.Controls.Add(this.PictureBox);
             this.Users_Panel.Controls.Add(this.UpdatedPanel);
@@ -706,6 +722,30 @@
             this.Users_Panel.Size = new System.Drawing.Size(1102, 684);
             this.Users_Panel.TabIndex = 3;
             // 
+            // DeleteUSer_Label
+            // 
+            this.DeleteUSer_Label.AutoSize = true;
+            this.DeleteUSer_Label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(46)))), ((int)(((byte)(49)))));
+            this.DeleteUSer_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteUSer_Label.ForeColor = System.Drawing.Color.White;
+            this.DeleteUSer_Label.Location = new System.Drawing.Point(711, 600);
+            this.DeleteUSer_Label.Name = "DeleteUSer_Label";
+            this.DeleteUSer_Label.Size = new System.Drawing.Size(237, 20);
+            this.DeleteUSer_Label.TabIndex = 2;
+            this.DeleteUSer_Label.Text = "SUCCESSFULLY DELETED";
+            // 
+            // ResetPass_Label
+            // 
+            this.ResetPass_Label.AutoSize = true;
+            this.ResetPass_Label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(46)))), ((int)(((byte)(49)))));
+            this.ResetPass_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ResetPass_Label.ForeColor = System.Drawing.Color.White;
+            this.ResetPass_Label.Location = new System.Drawing.Point(711, 554);
+            this.ResetPass_Label.Name = "ResetPass_Label";
+            this.ResetPass_Label.Size = new System.Drawing.Size(147, 20);
+            this.ResetPass_Label.TabIndex = 2;
+            this.ResetPass_Label.Text = "Default: Pass123";
+            // 
             // PicPath_TextBox
             // 
             this.PicPath_TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -729,7 +769,7 @@
             // 
             this.UpdatedPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(46)))), ((int)(((byte)(49)))));
             this.UpdatedPanel.Controls.Add(this.label15);
-            this.UpdatedPanel.Location = new System.Drawing.Point(715, 495);
+            this.UpdatedPanel.Location = new System.Drawing.Point(711, 494);
             this.UpdatedPanel.Name = "UpdatedPanel";
             this.UpdatedPanel.Size = new System.Drawing.Size(357, 38);
             this.UpdatedPanel.TabIndex = 33;
@@ -1041,14 +1081,14 @@
             // 
             this.dataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(146)))), ((int)(((byte)(137)))));
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkSeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkOliveGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSeaGreen;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkOliveGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView3.Location = new System.Drawing.Point(12, 15);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(346, 654);
@@ -1064,20 +1104,44 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(517, 195);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(613, 292);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 5;
+            this.pictureBox2.TabStop = false;
+            // 
+            // FormClose_Button
+            // 
+            this.FormClose_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FormClose_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormClose_Button.ForeColor = System.Drawing.Color.White;
+            this.FormClose_Button.Location = new System.Drawing.Point(1301, 0);
+            this.FormClose_Button.Name = "FormClose_Button";
+            this.FormClose_Button.Size = new System.Drawing.Size(48, 32);
+            this.FormClose_Button.TabIndex = 61;
+            this.FormClose_Button.Text = "X";
+            this.FormClose_Button.UseVisualStyleBackColor = true;
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(192)))), ((int)(((byte)(149)))));
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.FormClose_Button);
+            this.Controls.Add(this.Users_Panel);
             this.Controls.Add(this.TimeSmall_Label);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.Users_Panel);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.TimeLarge_Label);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PrintID_Panel);
             this.Controls.Add(this.Logs_Panel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AdminForm";
@@ -1099,7 +1163,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Barcode_picBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.IDpicBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.Logs_Panel.ResumeLayout(false);
             this.Logs_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -1109,6 +1172,7 @@
             this.UpdatedPanel.ResumeLayout(false);
             this.UpdatedPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1197,5 +1261,9 @@
         private System.Windows.Forms.Label printableName;
         private System.Windows.Forms.PictureBox printablePic;
         private System.Windows.Forms.Label printableIDNum;
+        private System.Windows.Forms.Label LogCleared_Label;
+        private System.Windows.Forms.Label ResetPass_Label;
+        private System.Windows.Forms.Label DeleteUSer_Label;
+        private System.Windows.Forms.Button FormClose_Button;
     }
 }

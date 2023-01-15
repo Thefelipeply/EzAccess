@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.FormClose_Button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.Warning_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -54,7 +55,7 @@
             this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backBtn.ForeColor = System.Drawing.Color.Black;
             this.backBtn.Location = new System.Drawing.Point(11, 672);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(2);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(118, 46);
             this.backBtn.TabIndex = 1;
@@ -102,6 +103,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.panel1.Controls.Add(this.FormClose_Button);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.Warning_Panel);
             this.panel1.Controls.Add(this.label3);
@@ -183,12 +185,24 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(272, 77);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(317, 73);
             this.dataGridView1.TabIndex = 52;
+            // 
+            // FormClose_Button
+            // 
+            this.FormClose_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FormClose_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormClose_Button.ForeColor = System.Drawing.Color.White;
+            this.FormClose_Button.Location = new System.Drawing.Point(472, 1);
+            this.FormClose_Button.Name = "FormClose_Button";
+            this.FormClose_Button.Size = new System.Drawing.Size(48, 33);
+            this.FormClose_Button.TabIndex = 60;
+            this.FormClose_Button.Text = "X";
+            this.FormClose_Button.UseVisualStyleBackColor = true;
             // 
             // LogInForm
             // 
@@ -200,7 +214,8 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.backBtn);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "LogInForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LogInForm";
@@ -228,5 +243,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button FormClose_Button;
     }
 }

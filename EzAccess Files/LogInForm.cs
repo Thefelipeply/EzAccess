@@ -44,6 +44,8 @@ namespace GUI
                 AccountType = connect.sql_dataset.Tables[0].Rows[0][3].ToString();
                 SendUsername = username_TxtBox.Text;
 
+                // sql log query
+
                 if (AccountType == "Admin")
                 {
                     

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserForm));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.MiddleName_Textbox = new System.Windows.Forms.TextBox();
@@ -56,15 +55,18 @@
             this.label11 = new System.Windows.Forms.Label();
             this.Status_Label = new System.Windows.Forms.Label();
             this.IDNum_Label = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.Updated_Label = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.Address_Textbox = new System.Windows.Forms.TextBox();
             this.Email_Textbox = new System.Windows.Forms.TextBox();
             this.Picpath_TextBox = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.UpdateInfo_Button = new System.Windows.Forms.Button();
             this.ChangePass_Button = new System.Windows.Forms.Button();
             this.Main_Panel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ChangePass_Panel = new System.Windows.Forms.Panel();
+            this.PasswordChange = new System.Windows.Forms.Label();
             this.ChangePassClose_Button = new System.Windows.Forms.Button();
             this.ChangePassword_Button = new System.Windows.Forms.Button();
             this.ConfirmNewPass_Textbox = new System.Windows.Forms.TextBox();
@@ -77,10 +79,11 @@
             this.CloseChangePass_Button = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.FormClose_Button = new System.Windows.Forms.Button();
             this.UserInfo_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.Main_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ChangePass_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -109,18 +112,6 @@
             this.label1.Size = new System.Drawing.Size(82, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "First Name";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(82, 64);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(268, 263);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // label5
             // 
@@ -239,8 +230,9 @@
             this.UserInfo_Panel.Controls.Add(this.label11);
             this.UserInfo_Panel.Controls.Add(this.Status_Label);
             this.UserInfo_Panel.Controls.Add(this.IDNum_Label);
-            this.UserInfo_Panel.Controls.Add(this.label14);
+            this.UserInfo_Panel.Controls.Add(this.Updated_Label);
             this.UserInfo_Panel.Controls.Add(this.label1);
+            this.UserInfo_Panel.Controls.Add(this.label13);
             this.UserInfo_Panel.Controls.Add(this.label2);
             this.UserInfo_Panel.Controls.Add(this.MiddleName_Textbox);
             this.UserInfo_Panel.Controls.Add(this.Address_Textbox);
@@ -412,17 +404,30 @@
             this.IDNum_Label.TabIndex = 8;
             this.IDNum_Label.Text = "XXXXXXXX";
             // 
-            // label14
+            // Updated_Label
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(615, 64);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(96, 24);
-            this.label14.TabIndex = 8;
-            this.label14.Text = "STATUS:";
+            this.Updated_Label.AutoSize = true;
+            this.Updated_Label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(120)))), ((int)(((byte)(116)))));
+            this.Updated_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Updated_Label.ForeColor = System.Drawing.Color.White;
+            this.Updated_Label.Location = new System.Drawing.Point(578, 351);
+            this.Updated_Label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Updated_Label.Name = "Updated_Label";
+            this.Updated_Label.Size = new System.Drawing.Size(261, 24);
+            this.Updated_Label.TabIndex = 8;
+            this.Updated_Label.Text = "SUCCESSFULLY UPDATE!";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(613, 64);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(96, 24);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "STATUS:";
             // 
             // Address_Textbox
             // 
@@ -448,15 +453,17 @@
             this.Picpath_TextBox.Size = new System.Drawing.Size(215, 26);
             this.Picpath_TextBox.TabIndex = 13;
             // 
-            // pictureBox1
+            // pictureBox2
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(106, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(582, 360);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(82, 64);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(268, 263);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // UpdateInfo_Button
             // 
@@ -498,9 +505,20 @@
             this.Main_Panel.Size = new System.Drawing.Size(811, 486);
             this.Main_Panel.TabIndex = 23;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(106, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(582, 360);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
+            // 
             // ChangePass_Panel
             // 
             this.ChangePass_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.ChangePass_Panel.Controls.Add(this.PasswordChange);
             this.ChangePass_Panel.Controls.Add(this.ChangePassClose_Button);
             this.ChangePass_Panel.Controls.Add(this.ChangePassword_Button);
             this.ChangePass_Panel.Controls.Add(this.ConfirmNewPass_Textbox);
@@ -515,6 +533,19 @@
             this.ChangePass_Panel.Name = "ChangePass_Panel";
             this.ChangePass_Panel.Size = new System.Drawing.Size(715, 410);
             this.ChangePass_Panel.TabIndex = 21;
+            // 
+            // PasswordChange
+            // 
+            this.PasswordChange.AutoSize = true;
+            this.PasswordChange.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(120)))), ((int)(((byte)(116)))));
+            this.PasswordChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PasswordChange.ForeColor = System.Drawing.Color.White;
+            this.PasswordChange.Location = new System.Drawing.Point(134, 314);
+            this.PasswordChange.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.PasswordChange.Name = "PasswordChange";
+            this.PasswordChange.Size = new System.Drawing.Size(266, 24);
+            this.PasswordChange.TabIndex = 27;
+            this.PasswordChange.Text = "SUCCESSFULLY CHANGE!";
             // 
             // ChangePassClose_Button
             // 
@@ -645,29 +676,42 @@
             this.dataGridView2.Size = new System.Drawing.Size(380, 75);
             this.dataGridView2.TabIndex = 25;
             // 
+            // FormClose_Button
+            // 
+            this.FormClose_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FormClose_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormClose_Button.ForeColor = System.Drawing.Color.White;
+            this.FormClose_Button.Location = new System.Drawing.Point(1301, 0);
+            this.FormClose_Button.Name = "FormClose_Button";
+            this.FormClose_Button.Size = new System.Drawing.Size(48, 32);
+            this.FormClose_Button.TabIndex = 62;
+            this.FormClose_Button.Text = "X";
+            this.FormClose_Button.UseVisualStyleBackColor = true;
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(192)))), ((int)(((byte)(149)))));
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.FormClose_Button);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.LogOut_button);
             this.Controls.Add(this.ChangePass_Panel);
             this.Controls.Add(this.UserInfo_Panel);
             this.Controls.Add(this.Main_Panel);
-            this.Controls.Add(this.UserInfo_Panel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserForm";
             this.Load += new System.EventHandler(this.UserForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.UserInfo_Panel.ResumeLayout(false);
             this.UserInfo_Panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.Main_Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ChangePass_Panel.ResumeLayout(false);
             this.ChangePass_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -704,7 +748,7 @@
         private System.Windows.Forms.TextBox Address_Textbox;
         private System.Windows.Forms.Label IDNum_Label;
         private System.Windows.Forms.Label Status_Label;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label Updated_Label;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button UpdateInfo_Button;
@@ -725,5 +769,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox Picpath_TextBox;
+        private System.Windows.Forms.Label PasswordChange;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button FormClose_Button;
     }
 }

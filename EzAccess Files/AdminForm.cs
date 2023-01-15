@@ -6,11 +6,17 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+using System.Drawing.Drawing2D;
+using System.IO;
+using System.Drawing.Imaging;
+using System.Data.Common;
 namespace GUI
 {
     public partial class AdminForm : Form
@@ -19,11 +25,12 @@ namespace GUI
         private string PicPath;
         private Image DefaultPic;
         PrintPreviewDialog PreviewDialog = new PrintPreviewDialog();
-        
+
+        public static string request = "";
 
         public AdminForm()
         {
-            
+
             connect.connString();
             InitializeComponent();
         }
@@ -50,6 +57,9 @@ namespace GUI
 
         private void Users_Button_Click(object sender, EventArgs e)
         {
+            UpdatedPanel.Visible = false;
+            ResetPass_Label.Visible = false;
+            DeleteUSer_Label.Visible = false;
             if (Users_Panel.Visible == false)
             {
                 TimeSmall_Label.Visible = true;
@@ -64,10 +74,11 @@ namespace GUI
                 Users_Panel.Visible = false;
                 PrintID_Panel.Visible = false;
             }
-            
+
         }
         private void PrintID_Click(object sender, EventArgs e)
         {
+            LogCleared_Label.Visible = false;
             if (PrintID_Panel.Visible == false)
             {
                 TimeSmall_Label.Visible = true;
@@ -185,24 +196,37 @@ namespace GUI
             //put an confirmation first
             try
             {
-                connect.sql = "UPDATE LoginTable SET " +
-                "Password = 'Pass123' " +
-                "WHERE ID = '" + UserID_TextBox.Text + "'";
-                connect.cmd();
-                connect.sqladapterUpdate();
+                request = "ResetPass";
+                Confirmation_AdminForm confirmForm = new Confirmation_AdminForm();
+                confirmForm.ShowDialog();
+                if (Confirmation_AdminForm.ReturnRequest == true)
+                {
+                    connect.sql = "UPDATE LoginTable SET " +
+                               "Password = 'Pass123' " +
+                               "WHERE ID = '" + UserID_TextBox.Text + "'";
+                    connect.cmd();
+                    connect.sqladapterUpdate();
+                    ResetPass_Label.Visible = true;
+                    Confirmation_AdminForm.ReturnRequest = false;
+
+                    // sql query in logs
+
+                }
             }
             catch (Exception)
             {
 
             }
-            
+
         }
         private void UpdateUser_Button_Click(object sender, EventArgs e)
         {
             try
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to update this user?", "Update", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                request = "UpdateUser";
+                Confirmation_AdminForm confirmForm = new Confirmation_AdminForm();
+                confirmForm.ShowDialog();
+                if (Confirmation_AdminForm.ReturnRequest == true)
                 {
                     connect.sql = "UPDATE UserTable SET " +
                         "FirstName = '" + GivenName_TextBox.Text + "', " +
@@ -223,20 +247,26 @@ namespace GUI
                     DataGridUpdate();
                     UpdatedPanel.Show();
                     Disable();
+                    Confirmation_AdminForm.ReturnRequest = false;
+
+                    // sql query in logs
                 }
+
             }
             catch (Exception)
             {
 
             }
-            
+
         }
         private void DeleteUser_Button_Click(object sender, EventArgs e)
         {
             try
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this user?", "Delete", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                request = "DeleteUser";
+                Confirmation_AdminForm confirmForm = new Confirmation_AdminForm();
+                confirmForm.ShowDialog();
+                if (Confirmation_AdminForm.ReturnRequest == true)
                 {
                     connect.sql = "DELETE FROM UserTable WHERE UserTable.ID = '" + UserID_TextBox.Text + "'";
                     connect.cmd();
@@ -244,13 +274,18 @@ namespace GUI
 
                     Disable();
                     Clear();
+                    DeleteUSer_Label.Visible = true;
+                    Confirmation_AdminForm.ReturnRequest = false;
+
+                    // sql query in logs
                 }
+
             }
             catch (Exception)
             {
 
             }
-            
+
         }
         private void Clear_Button_Click(object sender, EventArgs e)
         {
@@ -337,9 +372,9 @@ namespace GUI
                 {
                     IDpicBox.Image = Image.FromFile(IDPicPath_TextBox.Text);
                 }
-                //bar code
+
                 Zen.Barcode.Code128BarcodeDraw barcode = Zen.Barcode.BarcodeDrawFactory.Code128WithChecksum;
-                Barcode_picBox.Image = barcode.Draw(ID_Number.Text, 50);
+                Barcode_picBox.Image = barcode.Draw(ID_Number.Text, 35);
 
                 printableName.Text = ID_FullName.Text;
                 printableAge.Text = ID_Age.Text;
@@ -348,6 +383,9 @@ namespace GUI
                 printableOccupation.Text = ID_Occupation.Text;
                 printablePic.Image = IDpicBox.Image;
                 printableIDNum.Text = ID_Number.Text;
+                printableBarCode.Image = Barcode_picBox.Image;
+
+                // sql query in logs
             }
             catch (Exception)
             {
@@ -360,7 +398,7 @@ namespace GUI
             Print(this.IDprintable_pnel);
         }
 
-
+        // print part
         PrintPreviewDialog prntprvw = new PrintPreviewDialog();
         PrintDocument pntdoc = new PrintDocument();
         Panel Panel = null;
@@ -376,15 +414,14 @@ namespace GUI
         }
         public void pntdoc_printpage(object sender, PrintPageEventArgs e)
         {
-                
             Rectangle pagearea = e.PageBounds;
-            e.Graphics.DrawImage(memorying, (this.IDprintable_pnel.Width / 4) - (this.IDprintable_pnel.Height / 4), 20);
-            
+            e.Graphics.DrawImage(memorying, (this.IDprintable_pnel.Width) - (this.IDprintable_pnel.Height), 20);      
         }
         public void getptrinarea(Panel pn1)
         {
             memorying = new Bitmap(pn1.Width, pn1.Height);
             pn1.DrawToBitmap(memorying, new Rectangle(0, 0, pn1.Width, pn1.Height));
+            
         }
         
         //LOGS Panel
@@ -392,14 +429,18 @@ namespace GUI
         {
             try
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to clear logs?", "Logs Cleaner", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
+                request = "ClearLogs";
+                Confirmation_AdminForm ConfirmationForm = new Confirmation_AdminForm();
+                ConfirmationForm.ShowDialog();
+
+                if (Confirmation_AdminForm.ReturnRequest == true)
                 {
                     connect.sql = "DELETE FROM LogsTable";
                     connect.cmd();
                     connect.sqladapterDelete();
-                        
                     DataGridUpdate();
+                    LogCleared_Label.Visible = true;
+                    Confirmation_AdminForm.ReturnRequest = false;
                 }
             }
             catch (Exception)

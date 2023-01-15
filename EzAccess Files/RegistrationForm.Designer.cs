@@ -39,6 +39,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.AccountAlert_Panel = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
             this.WrongPass_Label = new System.Windows.Forms.Label();
             this.UserExistError_Label = new System.Windows.Forms.Label();
             this.TermsUseError_Label = new System.Windows.Forms.Label();
@@ -67,9 +70,11 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.AccountType = new System.Windows.Forms.ComboBox();
+            this.FormClose_Button = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.AccountAlert_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -137,6 +142,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.panel2.Controls.Add(this.FormClose_Button);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(-1, 0);
@@ -168,6 +174,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel1.Controls.Add(this.AccountAlert_Panel);
             this.panel1.Controls.Add(this.WrongPass_Label);
             this.panel1.Controls.Add(this.UserExistError_Label);
             this.panel1.Controls.Add(this.TermsUseError_Label);
@@ -200,6 +207,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(909, 566);
             this.panel1.TabIndex = 63;
+            // 
+            // AccountAlert_Panel
+            // 
+            this.AccountAlert_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(120)))), ((int)(((byte)(116)))));
+            this.AccountAlert_Panel.Controls.Add(this.button1);
+            this.AccountAlert_Panel.Controls.Add(this.label14);
+            this.AccountAlert_Panel.Location = new System.Drawing.Point(262, 269);
+            this.AccountAlert_Panel.Name = "AccountAlert_Panel";
+            this.AccountAlert_Panel.Size = new System.Drawing.Size(437, 26);
+            this.AccountAlert_Panel.TabIndex = 65;
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(409, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 26);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(14, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(381, 24);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "ACCOUNT SUCSESSFULLY CREATED!";
             // 
             // WrongPass_Label
             // 
@@ -490,6 +531,18 @@
             this.AccountType.TabIndex = 54;
             this.AccountType.Text = "User";
             // 
+            // FormClose_Button
+            // 
+            this.FormClose_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FormClose_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormClose_Button.ForeColor = System.Drawing.Color.White;
+            this.FormClose_Button.Location = new System.Drawing.Point(1302, 0);
+            this.FormClose_Button.Name = "FormClose_Button";
+            this.FormClose_Button.Size = new System.Drawing.Size(48, 33);
+            this.FormClose_Button.TabIndex = 61;
+            this.FormClose_Button.Text = "X";
+            this.FormClose_Button.UseVisualStyleBackColor = true;
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -504,6 +557,7 @@
             this.Controls.Add(this.AccountType);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "RegistrationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -514,6 +568,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.AccountAlert_Panel.ResumeLayout(false);
+            this.AccountAlert_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
@@ -561,5 +617,9 @@
         private System.Windows.Forms.Label UserExistError_Label;
         private System.Windows.Forms.Label WrongPass_Label;
         private System.Windows.Forms.ComboBox AccountType;
+        private System.Windows.Forms.Panel AccountAlert_Panel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button FormClose_Button;
     }
 }

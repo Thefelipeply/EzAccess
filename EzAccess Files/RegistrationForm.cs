@@ -20,21 +20,21 @@ namespace GUI
             connect.connString();
             InitializeComponent(); 
         }
-
         private void RegistrationForm_Load(object sender, EventArgs e)
-        {
-            
+        {  
             EmptyFieldError_Label.Visible = false;
             TermsUseError_Label.Visible = false;
             UserExistError_Label.Visible = false;
+            AccountAlert_Panel.Visible = false;
             WrongPass_Label.Visible = false;
             dataGridView1.Visible = false;
             dataGridView2.Visible = false;
             dataGridView3.Visible = false;
             dataGridView4.Visible = false;
+            RandomID_TextBox.Enabled = false;
+            //AccountAlert_Panel.Visible = false;
             try
-            { 
-                
+            {         
                 connect.UserSelect();
                 connect.cmd();
                 connect.sqladapterSelect();
@@ -63,10 +63,10 @@ namespace GUI
                     var random = new Random();
                     return new string(Enumerable.Repeat(alphabet, length).Select(s => s[random.Next(s.Length)]).ToArray());
                 }
-                GeneratedID = GenerateIDtemp(16);
+                GeneratedID = GenerateIDtemp(12);
                 
 
-                
+                // ID CHECKER
                 connect.sql = "SELECT * FROM UserTable " + "WHERE ID = '" + GeneratedID + "'";
                 connect.cmd();
                 connect.sqladapterSelect();
@@ -91,7 +91,7 @@ namespace GUI
         private void registerBtn_Click(object sender, EventArgs e)
         {
 
-            if ((FirstName_Textbox.Text == "")||(MiddleName_Textbox.Text == "")||(LastName_Textbox.Text == "")||(Suffix_Textbox.Text == "") ||(Email_Textbox.Text == "") ||(Occupation_Textbox.Text == "")||(Username_Textbox.Text == "") ||(Password_Textbox.Text == "") ||(ConfirmPassword_Textbox.Text == ""))
+            if ((FirstName_Textbox.Text == "")||(MiddleName_Textbox.Text == "")||(LastName_Textbox.Text == "")||(Email_Textbox.Text == "") ||(Occupation_Textbox.Text == "")||(Username_Textbox.Text == "") ||(Password_Textbox.Text == "") ||(ConfirmPassword_Textbox.Text == ""))
             {
                 EmptyFieldError_Label.Visible = true;
             }
@@ -105,12 +105,12 @@ namespace GUI
                     }
                     else
                     {
+                        //USERNAME CHECKER
                         connect.sql = "SELECT * FROM LoginTable WHERE CONVERT(VARCHAR, Username) = '" + Username_Textbox.Text + "'";
                         connect.cmd();
                         connect.sqladapterSelect();
                         connect.sqlDataSetSelect_LoginTable();
                         dataGridView4.DataSource = connect.sql_dataset.Tables[0];
-
                         if (dataGridView4.Rows.Count != 0)
                         {
                             try
@@ -138,7 +138,12 @@ namespace GUI
                                 connect.sqlDataSetSelect_LoginTable();
                                 dataGridView2.DataSource = connect.sql_dataset.Tables[0];
 
-                                // Display "ACCOUNT IS SUCCESSFULLY CREATED!"
+
+                                // clear textboxes
+
+                                AccountAlert_Panel.Visible = true;
+
+                                // sql query in logs
 
                             }
                             catch (Exception)
@@ -158,5 +163,11 @@ namespace GUI
                 }
             }      
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AccountAlert_Panel.Visible = false;
+        }
+        // PASSWORD PART
+
     }
 }

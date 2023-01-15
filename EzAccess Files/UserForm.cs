@@ -27,6 +27,8 @@ namespace GUI
         {
             ChangePass_Panel.Visible = false;
             UserInfo_Panel.Visible = false;
+            ConfirmUpdate = "";
+
             //dataGridView1.Visible = false;
             //dataGridView2.Visible = false;
             Username = LogInForm.SendUsername;
@@ -59,6 +61,8 @@ namespace GUI
             Status_Label.Text = connect.sql_dataset.Tables[0].Rows[0][10].ToString();
             Picpath_TextBox.Text = connect.sql_dataset.Tables[0].Rows[0][11].ToString();
             pictureBox2.Image = Image.FromFile(Picpath_TextBox.Text);
+
+            // sql query in logs
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -75,28 +79,34 @@ namespace GUI
                 // display form with warnings no images selected
                 MessageBox.Show("LOLS");
             }     
-
         }
-
-        private void Update_Button_Click(object sender, EventArgs e)
+        public static string ConfirmUpdate = "";
+       private void Update_Button_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Submit all the details provided?"); //ask user to confirm
-            connect.sql = "UPDATE UserTable SET " +
-                "FirstName = '" + FirstName_Textbox.Text + "', " +
-                "MiddleName = '" + FirstName_Textbox.Text + "', " +
-                "LastName = '" + LastName_Textbox.Text + "', " +
-                "Suffix = '" + Suffix_Textbox.Text + "', " +
-                "Age = '" + Age_Textbox.Text + "', " +
-                "Sex = '" + Sex_CombBox.Text + "', " +
-                "Address = '" + Address_Textbox.Text + "', " +
-                "Email = '" + Email_Textbox.Text + "', " +
-                "Occupation = '" + Occupation_CombBox.Text + "', " +
-                "PicturePath = '" + Picpath_TextBox.Text + "' " +
-                "WHERE ID = '" + IDNum_Label.Text + "'";
-            connect.cmd();
-            connect.sqladapterUpdate();   
-            
-            //show system interrupt
+            ConfirmUpdate = "UpdateUser";
+            FormConfirmation_UserForm confirmForm = new FormConfirmation_UserForm();
+            confirmForm.ShowDialog();
+            if (FormConfirmation_UserForm.SystemConfirmation == true)
+            {
+                connect.sql = "UPDATE UserTable SET " +
+                               "FirstName = '" + FirstName_Textbox.Text + "', " +
+                               "MiddleName = '" + FirstName_Textbox.Text + "', " +
+                               "LastName = '" + LastName_Textbox.Text + "', " +
+                               "Suffix = '" + Suffix_Textbox.Text + "', " +
+                               "Age = '" + Age_Textbox.Text + "', " +
+                               "Sex = '" + Sex_CombBox.Text + "', " +
+                               "Address = '" + Address_Textbox.Text + "', " +
+                               "Email = '" + Email_Textbox.Text + "', " +
+                               "Occupation = '" + Occupation_CombBox.Text + "', " +
+                               "PicturePath = '" + Picpath_TextBox.Text + "' " +
+                               "WHERE ID = '" + IDNum_Label.Text + "'";
+                connect.cmd();
+                connect.sqladapterUpdate();
+                Updated_Label.Visible = true;
+                FormConfirmation_UserForm.SystemConfirmation = false;
+
+                // sql query in logs
+            }
         }
 
         private void LogOut_button_Click(object sender, EventArgs e)
@@ -110,7 +120,6 @@ namespace GUI
         {
             ChangePass_Panel.Visible = false;
             Main_Panel.Visible = true;
-            
         }
 
         private void CloseUserForm_Button_Click(object sender, EventArgs e)
@@ -123,14 +132,14 @@ namespace GUI
         {
             UserInfo_Panel.Visible = true;
             Main_Panel.Visible = false;
+            Updated_Label.Visible = false;
         }
 
         private void ChangePass_Button_Click(object sender, EventArgs e)
         {
             ChangePass_Panel.Visible = true;
             Main_Panel.Visible = false;
-
-            //Textboxes
+            PasswordChange.Visible = false;
             Password_Textbox.Text = "";
             NewPass_Textbox.Text = "";
             ConfirmNewPass_Textbox.Text = "";
@@ -138,20 +147,34 @@ namespace GUI
 
         private void ChangePassword_Button_Click(object sender, EventArgs e)
         {
-            //connect.sql = "SELECT Password FROM LoginTable WHERE ID = '" + IDNum_Label.Text + "'";
-            SqlCommand checkPassword = new SqlCommand("SELECT COUNT(Password) FROM LoginTable WHERE ([Password] = @Password)");
-            checkPassword.Parameters.AddWithValue("@Password", Password_Textbox.Text);
-            int PasswordExist = (int)checkPassword.ExecuteScalar();
-            if (PasswordExist > 0)
+            connect.sql = "SELECT * FROM LoginTable WHERE ID = '" + IDNumber + "'";
+            connect.cmd();
+            connect.sqladapterSelect();
+            connect.sqlDataSetSelect_LoginTable();
+
+            string pass = Address_Textbox.Text = connect.sql_dataset.Tables[0].Rows[0][2].ToString();
+            if (pass == Password_Textbox.Text)
             {
-                if (NewPass_Textbox == ConfirmNewPass_Textbox)
+                if (NewPass_Textbox.Text == ConfirmNewPass_Textbox.Text)
                 {
-                    DialogResult dialogResult = MessageBox.Show("Are you sure you want to update your password?", "Confirm Password", MessageBoxButtons.YesNo);
-                    if (dialogResult == DialogResult.Yes)
+                    ConfirmUpdate = "UpdatePass";
+                    FormConfirmation_UserForm confirmForm = new FormConfirmation_UserForm();
+                    confirmForm.ShowDialog();
+
+                    if(FormConfirmation_UserForm.SystemConfirmation == true)
                     {
                         connect.sql = "UPDATE LoginTable SET " +
-                            "Password = '" + NewPass_Textbox.Text + "' " +
-                            "WHERE ID = '" + IDNum_Label.Text + "'";
+                                  "Password = '" + NewPass_Textbox.Text + "' " +
+                                  "WHERE ID = '" + IDNum_Label.Text + "'";
+                        connect.cmd();
+                        connect.sqladapterUpdate();
+                        Password_Textbox.Text = "";
+                        ConfirmNewPass_Textbox.Text = "";
+                        NewPass_Textbox.Text = "";
+                        PasswordChange.Visible = true;
+                        FormConfirmation_UserForm.SystemConfirmation = false;
+
+                        // sql query in logs
                     }
                 }
                 else
@@ -163,10 +186,9 @@ namespace GUI
             }
             else
             {
-                MessageBox.Show("Username and password provided is incorrect");
-                Password_Textbox.Clear();
-                Password_Textbox.Focus();
-            }
+                Password_Textbox.Text = "";
+                MessageBox.Show("Wrong pass!");
+            }          
         }
     }
 }

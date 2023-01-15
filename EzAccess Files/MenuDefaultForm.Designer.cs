@@ -58,7 +58,9 @@
             this.Identification_Panel = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ResetTimer = new System.Windows.Forms.Timer(this.components);
+            this.InputChecker = new System.Windows.Forms.Timer(this.components);
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.FormClose_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox)).BeginInit();
             this.Menu_Panel.SuspendLayout();
             this.Alert_Panel.SuspendLayout();
@@ -85,7 +87,7 @@
             this.Menu_Panel.Controls.Add(this.RegisterButton);
             this.Menu_Panel.Controls.Add(this.ButtonToCloseTab);
             this.Menu_Panel.Controls.Add(this.LoginButton);
-            this.Menu_Panel.Location = new System.Drawing.Point(1011, 97);
+            this.Menu_Panel.Location = new System.Drawing.Point(355, 238);
             this.Menu_Panel.Name = "Menu_Panel";
             this.Menu_Panel.Size = new System.Drawing.Size(706, 284);
             this.Menu_Panel.TabIndex = 57;
@@ -150,15 +152,16 @@
             // 
             // BarNumTxtBox
             // 
-            this.BarNumTxtBox.BackColor = System.Drawing.Color.White;
+            this.BarNumTxtBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(192)))), ((int)(((byte)(149)))));
             this.BarNumTxtBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.BarNumTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BarNumTxtBox.ForeColor = System.Drawing.Color.Black;
-            this.BarNumTxtBox.Location = new System.Drawing.Point(133, 635);
+            this.BarNumTxtBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(192)))), ((int)(((byte)(149)))));
+            this.BarNumTxtBox.Location = new System.Drawing.Point(-1, 700);
             this.BarNumTxtBox.Margin = new System.Windows.Forms.Padding(0);
             this.BarNumTxtBox.Name = "BarNumTxtBox";
             this.BarNumTxtBox.Size = new System.Drawing.Size(142, 31);
             this.BarNumTxtBox.TabIndex = 56;
+            this.BarNumTxtBox.TextChanged += new System.EventHandler(this.BarNumTxtBox_TextChanged);
             // 
             // RealTime_Label
             // 
@@ -178,7 +181,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
-            this.label2.Location = new System.Drawing.Point(500, 184);
+            this.label2.Location = new System.Drawing.Point(615, 185);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 20);
             this.label2.TabIndex = 59;
@@ -188,35 +191,35 @@
             // 
             this.GivenName_Label.AutoSize = true;
             this.GivenName_Label.BackColor = System.Drawing.Color.Transparent;
-            this.GivenName_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GivenName_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GivenName_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
-            this.GivenName_Label.Location = new System.Drawing.Point(477, 73);
+            this.GivenName_Label.Location = new System.Drawing.Point(524, 48);
             this.GivenName_Label.Name = "GivenName_Label";
-            this.GivenName_Label.Size = new System.Drawing.Size(335, 55);
+            this.GivenName_Label.Size = new System.Drawing.Size(411, 73);
             this.GivenName_Label.TabIndex = 59;
-            this.GivenName_Label.Text = "GIVEN NAME";
+            this.GivenName_Label.Text = "FIRSTNAME";
             // 
             // SurName_Label
             // 
             this.SurName_Label.AutoSize = true;
             this.SurName_Label.BackColor = System.Drawing.Color.Transparent;
-            this.SurName_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SurName_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SurName_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
-            this.SurName_Label.Location = new System.Drawing.Point(477, 119);
+            this.SurName_Label.Location = new System.Drawing.Point(524, 111);
             this.SurName_Label.Name = "SurName_Label";
-            this.SurName_Label.Size = new System.Drawing.Size(415, 55);
+            this.SurName_Label.Size = new System.Drawing.Size(386, 73);
             this.SurName_Label.TabIndex = 59;
-            this.SurName_Label.Text = "SURNAME SUFF";
+            this.SurName_Label.Text = "LASTNAME";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
-            this.label3.Location = new System.Drawing.Point(458, 28);
+            this.label3.Location = new System.Drawing.Point(431, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(140, 39);
+            this.label3.Size = new System.Drawing.Size(151, 42);
             this.label3.TabIndex = 59;
             this.label3.Text = "HELLO,";
             // 
@@ -225,7 +228,7 @@
             this.IDNumber_Label.AutoSize = true;
             this.IDNumber_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IDNumber_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
-            this.IDNumber_Label.Location = new System.Drawing.Point(620, 184);
+            this.IDNumber_Label.Location = new System.Drawing.Point(735, 185);
             this.IDNumber_Label.Name = "IDNumber_Label";
             this.IDNumber_Label.Size = new System.Drawing.Size(62, 20);
             this.IDNumber_Label.TabIndex = 59;
@@ -236,7 +239,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
-            this.label1.Location = new System.Drawing.Point(486, 206);
+            this.label1.Location = new System.Drawing.Point(601, 207);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 20);
             this.label1.TabIndex = 59;
@@ -247,7 +250,7 @@
             this.Occupation_Label.AutoSize = true;
             this.Occupation_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Occupation_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
-            this.Occupation_Label.Location = new System.Drawing.Point(620, 207);
+            this.Occupation_Label.Location = new System.Drawing.Point(735, 208);
             this.Occupation_Label.Name = "Occupation_Label";
             this.Occupation_Label.Size = new System.Drawing.Size(73, 20);
             this.Occupation_Label.TabIndex = 59;
@@ -258,7 +261,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
-            this.label5.Location = new System.Drawing.Point(530, 229);
+            this.label5.Location = new System.Drawing.Point(645, 230);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 20);
             this.label5.TabIndex = 59;
@@ -269,7 +272,7 @@
             this.Status_Label.AutoSize = true;
             this.Status_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Status_Label.ForeColor = System.Drawing.Color.Black;
-            this.Status_Label.Location = new System.Drawing.Point(620, 230);
+            this.Status_Label.Location = new System.Drawing.Point(735, 231);
             this.Status_Label.Name = "Status_Label";
             this.Status_Label.Size = new System.Drawing.Size(263, 31);
             this.Status_Label.TabIndex = 59;
@@ -279,7 +282,7 @@
             // 
             this.Alert_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(46)))), ((int)(((byte)(49)))));
             this.Alert_Panel.Controls.Add(this.label4);
-            this.Alert_Panel.Location = new System.Drawing.Point(442, 287);
+            this.Alert_Panel.Location = new System.Drawing.Point(526, 279);
             this.Alert_Panel.Name = "Alert_Panel";
             this.Alert_Panel.Size = new System.Drawing.Size(663, 100);
             this.Alert_Panel.TabIndex = 60;
@@ -299,6 +302,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(30)))), ((int)(((byte)(34)))));
+            this.panel2.Controls.Add(this.FormClose_Button);
             this.panel2.Controls.Add(this.RealTime_Label);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -320,7 +324,7 @@
             // 
             this.Verified_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(93)))), ((int)(((byte)(121)))));
             this.Verified_Panel.Controls.Add(this.label8);
-            this.Verified_Panel.Location = new System.Drawing.Point(445, 275);
+            this.Verified_Panel.Location = new System.Drawing.Point(526, 279);
             this.Verified_Panel.Name = "Verified_Panel";
             this.Verified_Panel.Size = new System.Drawing.Size(663, 100);
             this.Verified_Panel.TabIndex = 60;
@@ -341,7 +345,7 @@
             // 
             this.noAccess_Panel.BackColor = System.Drawing.Color.Khaki;
             this.noAccess_Panel.Controls.Add(this.label9);
-            this.noAccess_Panel.Location = new System.Drawing.Point(439, 304);
+            this.noAccess_Panel.Location = new System.Drawing.Point(526, 279);
             this.noAccess_Panel.Name = "noAccess_Panel";
             this.noAccess_Panel.Size = new System.Drawing.Size(663, 100);
             this.noAccess_Panel.TabIndex = 60;
@@ -361,7 +365,6 @@
             // Identification_Panel
             // 
             this.Identification_Panel.Controls.Add(this.PictureBox);
-            this.Identification_Panel.Controls.Add(this.noAccess_Panel);
             this.Identification_Panel.Controls.Add(this.label3);
             this.Identification_Panel.Controls.Add(this.Alert_Panel);
             this.Identification_Panel.Controls.Add(this.Verified_Panel);
@@ -373,9 +376,10 @@
             this.Identification_Panel.Controls.Add(this.Occupation_Label);
             this.Identification_Panel.Controls.Add(this.Status_Label);
             this.Identification_Panel.Controls.Add(this.label5);
-            this.Identification_Panel.Location = new System.Drawing.Point(146, 164);
+            this.Identification_Panel.Controls.Add(this.noAccess_Panel);
+            this.Identification_Panel.Location = new System.Drawing.Point(49, 178);
             this.Identification_Panel.Name = "Identification_Panel";
-            this.Identification_Panel.Size = new System.Drawing.Size(1116, 422);
+            this.Identification_Panel.Size = new System.Drawing.Size(1248, 428);
             this.Identification_Panel.TabIndex = 62;
             // 
             // timer1
@@ -388,12 +392,29 @@
             this.ResetTimer.Interval = 1000;
             this.ResetTimer.Tick += new System.EventHandler(this.ResetTimer_Tick);
             // 
+            // InputChecker
+            // 
+            this.InputChecker.Interval = 1;
+            this.InputChecker.Tick += new System.EventHandler(this.InputChecker_Tick);
+            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(374, 647);
+            this.textBox1.Location = new System.Drawing.Point(575, 697);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(155, 20);
             this.textBox1.TabIndex = 63;
+            // 
+            // FormClose_Button
+            // 
+            this.FormClose_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FormClose_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormClose_Button.ForeColor = System.Drawing.Color.White;
+            this.FormClose_Button.Location = new System.Drawing.Point(1302, 0);
+            this.FormClose_Button.Name = "FormClose_Button";
+            this.FormClose_Button.Size = new System.Drawing.Size(48, 33);
+            this.FormClose_Button.TabIndex = 59;
+            this.FormClose_Button.Text = "X";
+            this.FormClose_Button.UseVisualStyleBackColor = true;
             // 
             // MenuDefaultForm
             // 
@@ -407,7 +428,9 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.BarNumTxtBox);
             this.Controls.Add(this.panel2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuDefaultForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.MenuDefaultForm_Load);
             this.Click += new System.EventHandler(this.MenuDefaultForm_Click);
@@ -461,6 +484,8 @@
         private System.Windows.Forms.Panel Identification_Panel;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer ResetTimer;
+        private System.Windows.Forms.Timer InputChecker;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button FormClose_Button;
     }
 }

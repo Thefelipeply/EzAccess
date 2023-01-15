@@ -47,4 +47,5 @@ C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\EzAcce
 C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\GUI.exe
 C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\GUI.pdb
 C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\bin\Debug\Zen.Barcode.Core.dll
-C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\bin\Debug\USB-Barcode-Scanner.dll
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\GUI.FormConfirmation_UserForm.resources
+C:\Users\Emil Calilung\Documents\GitHub\EzAccess\EzAccess Files\obj\Debug\GUI.Confirmation_AdminForm.resources
